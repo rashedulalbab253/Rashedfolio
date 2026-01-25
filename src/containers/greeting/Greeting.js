@@ -45,9 +45,10 @@ export default function Greeting() {
                     download="cv_of_Rashedul_Albab.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="download-link-button"
+                    className="main-button"
+                    style={{ marginRight: '50px' }}
                   >
-                    <Button text="Download my resume" />
+                    Download my resume
                   </a>
                 )}
               </div>
