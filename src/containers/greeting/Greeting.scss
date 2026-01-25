@@ -14,8 +14,10 @@
   margin-top: 0.5rem;
 }
 
-.greeting-main {
-  display: flex;
+
+.greeting-text-div {
+  z-index: 5;
+  position: relative;
 }
 
 .subTitle {
