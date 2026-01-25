@@ -46,7 +46,6 @@ export default function Greeting() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="main-button"
-                    style={{ marginRight: '50px' }}
                   >
                     Download my resume
                   </a>
