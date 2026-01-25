@@ -1,0 +1,147 @@
+@import "../../_globalColor";
+
+.experience-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.experience-card:hover+.experience-card-border {
+  border-color: $main-color;
+  width: 100%;
+  transition: width 0.6s ease-in-out;
+}
+
+.experience-card-border {
+  height: 30px;
+  width: 80%;
+  border-top: 2px solid $lightBorder1;
+  margin-bottom: 20px;
+  transition: width 0.6s ease-in-out;
+}
+
+.experience-text-company {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: $titleColor;
+}
+
+.dark-mode.experience-text-company {
+  color: $main-color !important;
+}
+
+.experience-company-link {
+  text-decoration: none;
+}
+
+.experience-company-link:hover {
+  text-decoration: underline;
+}
+
+.experience-roundedimg {
+  object-fit: cover;
+  margin-right: 2rem;
+  width: 6rem;
+  height: 6rem;
+  box-shadow: 0 0.5rem 1rem $lightBoxShadowDarker;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.experience-card-right {
+  max-width: 80%;
+}
+
+.experience-text-role {
+  color: $textColor;
+  font-weight: 700;
+  font-size: 19px;
+  margin: 0px;
+  padding-top: 0.5rem;
+  line-height: normal;
+}
+
+.experience-text-duration {
+  color: $titleColor;
+  font-size: 19px;
+  margin: 0px;
+  padding-top: 0.5rem;
+}
+
+.dark-mode.experience-text-duration {
+  color: white !important;
+}
+
+.experience-text-desc {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+  color: $textColor;
+}
+
+.experience-text-bullets>ul {
+  margin-top: 0.5rem;
+  padding-left: 20px;
+}
+
+.dark-mode.experience-text-role,
+.dark-mode.experience-text-duration,
+.dark-mode.experience-text-desc {
+  color: white !important;
+  background-color: transparent !important;
+}
+
+/* Media Query */
+
+@media (max-width: 1380px) {
+  .experience-card {
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+
+  .experience-card-right {
+    max-width: 90%;
+  }
+
+  .experience-card-border {
+    width: 90%;
+  }
+
+  .experience-text-role {
+    font-size: 18px;
+  }
+
+  .experience-text-company {
+    font-size: 22px;
+  }
+
+  .experience-roundedimg {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 0.5rem;
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-card {
+    text-align: center;
+    align-items: center;
+  }
+
+  .experience-card-right {
+    max-width: 100%;
+  }
+
+  .experience-card-border {
+    width: 100%;
+  }
+
+  .experience-roundedimg {
+    margin-top: 10px;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+}
