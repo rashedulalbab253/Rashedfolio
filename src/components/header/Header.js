@@ -47,9 +47,9 @@ function Header() {
             <a href="/#contact">Contact</a>
           </li>
           <li>
-            <a>
+            <div>
               <ToggleSwitch />
-            </a>
+            </div>
           </li>
         </ul>
       </header>
