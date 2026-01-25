@@ -81,13 +81,13 @@ export default function Research() {
                                                 {project.publishedAt}
                                             </p>
                                         )}
-                                        <p
+                                        <span
                                             className={
-                                                isDark ? "dark-mode card-subtitle" : "card-subtitle"
+                                                isDark ? "dark-mode card-instruction" : "card-instruction"
                                             }
                                         >
-                                            {project.projectDesc}
-                                        </p>
+                                            Click on the title to see abstract
+                                        </span>
                                         {project.footerLink ? (
                                             <div className="research-card-footer">
                                                 {project.footerLink.map((link, i) => {

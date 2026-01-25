@@ -190,6 +190,15 @@
   text-overflow: ellipsis;
 }
 
+.card-instruction {
+  font-size: 0.9rem;
+  color: #718096;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+  display: block;
+}
+
 .research-card-footer {
   display: flex;
   flex-wrap: wrap;
@@ -233,6 +242,10 @@
 
 .dark-mode.card-subtitle {
   color: #cbd5e0;
+}
+
+.dark-mode.card-instruction {
+  color: #a0aec0;
 }
 
 .dark-mode.research-tag {
