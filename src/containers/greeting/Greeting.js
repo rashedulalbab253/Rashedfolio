@@ -9,6 +9,7 @@ import StyleContext from "../../contexts/StyleContext";
 
 export default function Greeting() {
   const { isDark } = useContext(StyleContext);
+
   if (!greeting.displayGreeting) {
     return null;
   }
@@ -42,6 +43,8 @@ export default function Greeting() {
                   <a
                     href="/cv_of_Rashedul_Albab.pdf"
                     download="cv_of_Rashedul_Albab.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="download-link-button"
                   >
                     <Button text="Download my resume" />
