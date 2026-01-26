@@ -23,7 +23,7 @@ const greeting = {
   username: "Rashedul Albab",
   title: "Hi all, I'm Rashed",
   subTitle: emoji(
-    "I’m a Machine Learning researcher and engineer with an EEE background, working across computer vision, NLP,AI-Driven Electromagnetic System  and healthcare AI to bridge rigorous research and real-world systems."
+    "I’m a Prospective Machine Learning Engineer and PhD candidate with an EEE background, working across Computer Vision, NLP, AI-driven Electromagnetic Systems, and Healthcare AI to transform research innovations into scalable, real-world solutions."
   ),
   resumeLink:
     "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
