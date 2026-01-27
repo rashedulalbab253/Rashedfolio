@@ -398,11 +398,12 @@ const researchSection = {
   title: "Research",
   subtitle: "Research interests",
   interests: [
+    "AI in Healthcare",
     "Computer Vision",
-    "Clinical and Psychological Human Behavior Analysis",
-    "Human-Centered AI",
+    "Behavioral AI",
     "Natural Language Processing (NLP)",
-    "AI-Driven Electromagnetic System"
+    "AI-Driven Electromagnetic System",
+    "AI in Renewable Energy"
   ],
   projects: [
     {
