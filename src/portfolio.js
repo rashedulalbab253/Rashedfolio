@@ -181,7 +181,7 @@ const workExperiences = {
           company: "Mahdy Research Academy",
           companylogo: "/works/mahdy.png",
           date: "Jan 2024 – Dec 2024",
-          desc: "Conducting research in NLP,Human Centered AI and Healthcare AI applications.",
+          desc: "Conducted research in NLP,Human Centered AI and Healthcare AI applications.",
           descBullets: [
             "Mastered topics from statistical modeling to advanced architectures (Transformers, XAI) with hands-on implementation in Python, TensorFlow,PyTorch and scikit-learn.",
             "Developed a novel AI research project, leading to a journal-ready manuscript and a professional technical poster through iterative methodology refinement."
@@ -231,7 +231,7 @@ const workExperiences = {
           title: "Physics Instructor",
           company: "Bright Teaching Home",
           companylogo: "/works/bright.png",
-          date: "Jan 2019 – present",
+          date: "Jan 2020 – present",
           desc: "Teaching Physics at the HSC level for 5 years.",
           descBullets: [
             "Designed exam questions to develop problem solving skills and prepare students for competitive exams",
