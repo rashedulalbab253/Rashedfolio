@@ -408,29 +408,23 @@ const researchSection = {
   projects: [
     {
       projectName: "LesionNet: A Custom CNN Model for Accurate Multiclass Classification of Dermoscopic Skin Lesions",
-      projectDesc: "LesionNet: A Custom CNN Model for Accurate Multiclass Classification of Dermoscopic Skin Lesions",
+      projectDesc: `Skin cancer is one of the most prevalent and potentially fatal forms of cancer worldwide. The ability to accurately classify different types of skin lesions at an early stage is critical for ensuring timely treatment and improving patient outcomes. This study proposes a deep learning-based approach to automate the classification of dermoscopic images into seven categories of skin lesions, using a custom-designed Convolutional Neural Network (CNN) architecture named LesionNet. The model was trained and evaluated on the HAM10000 dataset, which includes over 10,015 RGB dermoscopic images representing a variety of dermatological conditions. To address the dataset’s inherent class imbalance, Random Oversampling was applied only to the training data to avoid biasing the test set. Comprehensive image preprocessing, including resizing, normalization, and augmentation (such as rotation, flipping, and zoom), was performed to improve the model’s generalizability. In addition, Exploratory Data Analysis (EDA) was conducted on associated metadata to observe trends in class distribution, patient age, gender, and lesion location. The LesionNet model was trained using categorical cross-entropy loss and optimized with the Adam optimizer. Evaluation was carried out using standard multiclass performance metrics, including accuracy, precision, recall, and F1-score. The proposed model, LesionNet, achieved a test accuracy of 97.12%, showing robust classification performance across all seven lesion types. These results demonstrate that with careful preprocessing and targeted model design, a lightweight customized CNN like LesionNet can serve as an effective tool for automated skin lesion classification, aiding in the development of reliable diagnostic support systems.
+
+Keywords: Skin Lesions, Multiclass Classification, LesionNet, Convolutional Neural Network (CNN), Deep learning, Medical Image Analysis, Dermoscopy, Image Augmentation.
+`,
       isThesis: true,
       footerLink: [
         {
-          name: "View Paper",
+          name: "View Book",
           url: "https://drive.google.com/drive/folders/1vsGJnoCkaxgcdXrnR9A-D1DA3e-MrpWr"
         }
       ]
     },
     {
-      projectName: "Enhancing Wind Farm Operational Efficiency Through Power Output Classification Using MLP and Ensemble Models",
-      projectDesc: "Abstract:",
-      publishedAt: "Accepted at: 28th ICCIT 2025(IEEE)",
-      footerLink: [
-        {
-          name: "View Paper",
-          url: "https://iccit.org.bd/2025/"
-        }
-      ]
-    },
-    {
       projectName: "Explainable Machine Learning for Multi-Class Power Quality Disturbance Classification Using SHAP and Feature Importance Analysis",
-      projectDesc: `Accurately forecasting wind turbine power output is challenging due to the complex and non-linear patterns present in wind farm operational data. Conventional approaches largely adopt regression-based forecasting, which, while effective in predicting continuous values, often lacks the interpretability required for direct operational decision-making. In this work, we reframe the problem as a multi-class classification task, categorizing power output into discrete levels, low, medium, and high, to provide actionable insights for identifying underperforming turbines and optimizing maintenance schedules. A curated Supervisory Control and Data Acquisition (SCADA) dataset was processed through a rigorous pipeline, including the handling of physically impossible negative power values, outlier capping, feature normalization, and label encoding. Five Machine Learning (ML) models, including Logistic Regression (LR), Random Forest (RF), Gradient Boosting (GB), XGBoost, and a Multilayer Perceptron (MLP), were trained and optimized using Grid Search hyperparameter tuning. The MLP model obtained the highest classification accuracy of 93.51%, marginally outperforming the top-performing ensemble models. Feature importance analysis revealed that while tree-based models relied heavily on a limited set of features, the MLP distributed its attention more evenly across all inputs. The proposed classification-based framework offers a robust and interpretable alternative to regression-based approaches, providing direct operational benefits for the renewable energy sector.
+      projectDesc: `The reliability and efficiency of modern power systems are negatively impacted by power quality disturbances (PQDs), such as voltage sags, swells, harmonics, and transients. Hence, rapid and accurate classification of PQDs is essential to prevent equipment failures and to ensure stable grid operation. This paper proposes an explainable machine learning (ML) framework for multi-class PQD classification. The framework combines traditional algorithms, Logistic Regression (LR), Decision Tree (DT), Random Forest (RF), Support Vector Machine (SVM), and XGBoost, with a one-dimensional Convolutional Neural Network (1D-CNN). The dataset was preprocessed by handling negative THD values, capping outliers, performing feature selection, encoding categorical variables, and normalizing numerical features. Model interpretability was ensured using feature importance analysis and SHAP values. The experimental findings indicate that LR achieved the maximum accuracy of 99.79% across the five disturbance categories. Beyond predictive performance, the framework enhances transparency by identifying the most influential features including Total Harmonic Distortion (THD), RMS Voltage, and Peak Voltage. The findings demonstrate that integrating robust preprocessing, highperforming models, and explainability methods offers a reliable and interpretable solution for detecting power disturbances in advanced grid networks and present-day energy infrastructures. 
+
+Keywords—Power quality disturbances, Power quality monitoring, Machine learning, Explainable AI (XAI), SHAP, 1D-CNN, Smart grids
 
 `,
       publishedAt: "Accepted at: 28th ICCIT 2025(IEEE)",
@@ -442,8 +436,31 @@ const researchSection = {
       ]
     },
     {
-      projectName: "Quantifying the relationship between Socioeconomic Status and Parent-Child Attachment on Adolescents through Machine Learning",
-      projectDesc: "Abstract:",
+      projectName: "Enhancing Wind Farm Operational Efficiency Through Power Output Classification Using MLP and Ensemble Models",
+
+
+      projectDesc: `Accurately forecasting wind turbine power output is challenging due to the complex and non-linear patterns present in wind farm operational data. Conventional approaches largely adopt regression-based forecasting, which, while effective in predicting continuous values, often lacks the interpretability required for direct operational decision-making. In this work, we reframe the problem as a multi-class classification task, categorizing power output into discrete levels, low, medium, and high, to provide actionable insights for identifying underperforming turbines and optimizing maintenance schedules. A curated Supervisory Control and Data Acquisition (SCADA) dataset was processed through a rigorous pipeline, including the handling of physically impossible negative power values, outlier capping, feature normalization, and label encoding. Five Machine Learning (ML) models, including Logistic Regression (LR), Random Forest (RF), Gradient Boosting (GB), XGBoost, and a Multilayer Perceptron (MLP), were trained and optimized using Grid Search hyperparameter tuning. The MLP model obtained the highest classification accuracy of 93.51%, marginally outperforming the top-performing ensemble models. Feature importance analysis revealed that while tree-based models relied heavily on a limited set of features, the MLP distributed its attention more evenly across all inputs. The proposed classification-based framework offers a robust and interpretable alternative to regression-based approaches, providing direct operational benefits for the renewable energy sector. 
+
+Keywords—Wind Turbine, Wind Energy, Machine Learning (ML), Power Output Classification, SCADA Data, Predictive Maintenance, Renewable Energy
+
+
+
+`,
+      publishedAt: "Accepted at: 28th ICCIT 2025(IEEE)",
+      footerLink: [
+        {
+          name: "View Paper",
+          url: "https://iccit.org.bd/2025/"
+        }
+      ]
+    },
+    {
+      projectName: "Quantifying the Relationship between Socioeconomic Status and Parent-Child Attachment on Adolescents Through Machine Learning",
+      projectDesc: `Parent-child relationships have a significant impact on adolescent development, influencing social cohesion, intellectual growth, and emotional well-being. Adolescence entails rapid biological, cognitive, and neurodevelopmental changes that profoundly impact psychosocial functioning and interpersonal dynamics. Socioeconomic status (SES) is a crucial factor influencing parent-child relationships, although quantifying how parentchild attachment influences SES remains challenging. To bridge this gap, we propose a Machine Learning (ML) framework to classify SES based on parent-child attachment factors, by using the publicly available dataset ”The effect of parent-child attachment on adolescents’ belief in a just world”, which consists of survey data from 239 families (478 samples). Following rigorous preprocessing—including Principal Component Analysis (PCA) for feature selection, z-score normalization, outlier rejection, and missing value imputation—seven classifiers (Decision Tree, Random Forest, k-Nearest Neighbors, Support Vector Machine, AdaBoost, XGBoost, and Logistic Regression) were trained and evaluated using k-fold cross-validation. Upsampling techniques were used to reduce class imbalance, which significantly enhanced model performance. XGBoost demonstrated the efficiency of ensemble approaches in SES classification by achieving the highest accuracy of 89.00% and AUC-ROC (98.44%), followed by Random Forest (88.40%) and Decision Tree (87.33%). Our findings indicate that attachment dimensions—particularly trust, communication, and alienation in both maternal and paternal relationships—are closely associated with SES categories. These findings provide a data-driven approach for creating focused interventions to improve the well-being of adolescents and reduce socioeconomic inequities. 
+
+Index Terms—Socioeconomic Status (SES), Parent-Child Relationships, Machine Learning, Principal Component Analysis (PCA), XGBoost, Adolescent development.
+
+`,
       publishedAt: "Accepted at: 28th ICCIT 2025(IEEE)",
       footerLink: [
         {
@@ -454,7 +471,11 @@ const researchSection = {
     },
     {
       projectName: "Time-Dependent Control of Voltage and Current via a Tunable Metasurface",
-      projectDesc: "Abstract:",
+      projectDesc: `Metasurfaces have recently attracted significant attention due to their potential use in optics and meta-devices as compact platforms for precise manipulation of electromagnetic waves. In this work, we present a tunable metasurface geometry based on a triple concentric ring configuration that offers superior surface-wave confinement and enhanced reactive control compared with conventional single-ring or patch structures. Based on our designs, the proposed structure achieves controllable voltage and current responses through strong field confinement and rapid impedance modulation along its surface. Although implementation on a cost-effective FR-4 substrate exhibits moderate dielectric loss at high frequencies, the metasurface maintains efficient performance and supports surfacewave transmission at 30 GHz. Under sinusoidal excitation with an input amplitude of 1V at 30 GHz, the device outperforms a copper reference plate, providing approximately 40V of voltage and about 0.8A of current at the microscale across a resistive load. Temporal reconfiguration is enabled by an exponential voltage signal applied to the voltage-controlled switches (VCS), which alternates the surface reactance between capacitive and inductive states within a 20 ns window. The electromagnetic field amplitudes remain stable across the metasurface, and the switching process produces controlled suppression and restoration of power flow. Overall, the metasurface demonstrates tunable, time-dependent electrical control and holds promise for nextgeneration reconfigurable communication, sensing, and energymodulation platforms. 
+
+Index Terms—Metasurface, Voltage Controlled Switch, Temporal modulation, Surface reactance, Temporal boundaries, FR-4 substrate.
+
+`,
       publishedAt: "Accepted at: 28th ICCIT 2025(IEEE)",
       footerLink: [
         {
@@ -465,7 +486,11 @@ const researchSection = {
     },
     {
       projectName: " A Vision Transformer-Based Pipeline for the Automated Classification of Monkeypox and Other Vesicular Skin Lesions: A Computationally-Efficient Approach for Global Health",
-      projectDesc: "Abstract:",
+      projectDesc: `Infectious diseases with dermatological manifestations, such as monkeypox, pose significant di-agnostic challenges, particularly in resource-limited settings. The visual similarity of monkeypox lesions to those of chickenpox, cowpox, hand-foot-and-mouth disease (HFMD), and measles com-plicates clinical assessment, often leading to misdiagnosis and delayed containment efforts. This thesis addresses the urgent need for an accurate, accessible, and automated diagnostic tool by pro-posing a novel pipeline based on a Vision Transformer (ViT). The proposed framework leverages pre-trained, frozen ViT-B/16 embeddings (specifically 'vit_base_patch16_224.orig_in21k' from the timm library) to perform six-class classification on the Mpox Skin Lesion Dataset Version 2.0 (MSLD v2.0), comprising 37,044 images. Evaluated using a rigorous five-fold cross-validation protocol, the primary model (ViT + SMOTE + SVM) achieves a mean macro-F1 score of 0.9895 ± 0.0018 and an accuracy of 98.95% ± 0.29%. By extracting robust, high-level features from im-ages, the pipeline avoids the computational expense of fine-tuning deep neural networks. To ad-dress the inherent class imbalance in medical datasets, the Synthetic Minority Oversampling Tech-nique (SMOTE) is integrated with a Support Vector Machine (SVM) classifier. Evaluated using a rigorous five-fold cross-validation protocol, the pipeline demonstrates exceptional performance. The primary model (ViT + SMOTE + SVM) achieves a mean macro-F1 score of 0.9895 ± 0.0018 and an accuracy of 98.95% ± 0.29%. Critically for public health applications and indicating a high sensitivity for detecting the target disease. This performance significantly surpasses a k-Nearest Neighbors (k-NN) baseline, validating the effectiveness of the SMOTE-based balancing strat-egy.This work makes several contributions: it demonstrates the power of frozen ViT embeddings for complex medical classification tasks, presents a lightweight and scalable pipeline suitable for deployment on edge devices, and provides a robust framework for handling class imbalance. By incorporating discussions on feature space visualization, ethical considerations, and practical de-ployment case studies, this thesis lays the groundwork for a clinically relevant tool that can en-hance global health preparedness and support dermatological diagnostics in diverse environments. 
+
+Keywords: Monkeypox, Skin Lesion Classification, Vision Transformer (ViT), Mpox Skin Le-sion Dataset (MSLD v2.0), Support Vector Machine (SVM), Synthetic Minority Oversampling Technique (SMOTE).
+
+`,
       publishedAt: "Ongoing",
       //footerLink: [
       //{
