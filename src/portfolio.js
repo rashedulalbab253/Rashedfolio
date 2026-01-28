@@ -38,6 +38,7 @@ const socialMediaLinks = {
   gmail: "albabahmed74@@gmail.com",
   //gitlab: "https://gitlab.com/saadpasta",
   facebook: "https://www.facebook.com/rashedul.albab",
+  researchgate: "https://www.researchgate.net/profile/Rashedul-Albab?ev=hdr_xprf",
   //medium: "https://medium.com/@saadpasta",
   //stackoverflow: "https://stackoverflow.com/users/10422806/saad-pasta",
   // Instagram, Twitter and Kaggle are also supported in the links!

@@ -70,6 +70,10 @@
   background-color: $instagram;
 }
 
+.researchgate i {
+  background-color: $researchgate;
+}
+
 /* Hover Transition */
 .twitter i:hover,
 .google i:hover,
@@ -80,6 +84,7 @@
 .instagram i:hover,
 .stack-overflow i:hover,
 .kaggle i:hover,
+.researchgate i:hover,
 .medium i:hover {
   background-color: $textColor;
 }
