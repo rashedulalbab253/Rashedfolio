@@ -8,8 +8,7 @@ import { useLocalStorage } from "./hooks/useLocalStorage";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
-  const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
-  const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);
+  const [isDark, setIsDark] = useLocalStorage("isDark", true);
 
   const changeTheme = () => {
     setIsDark(!isDark);
