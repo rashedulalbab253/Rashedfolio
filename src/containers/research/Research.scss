@@ -227,9 +227,43 @@
   box-shadow: 0 0 15px rgba(255, 106, 0, 0.4);
 }
 
+.research-section-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: $subTitle;
+  border-bottom: 2px solid rgba($main-color, 0.2);
+  display: inline-block;
+  padding-bottom: 5px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.research-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.research-cards-div-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
 /* Dark mode overrides */
 .dark-mode.research-subtitle {
   color: $text-secondary-dark;
+}
+
+.dark-mode.research-section-title {
+  color: white;
+  border-bottom-color: rgba($main-color, 0.4);
 }
 
 .dark-mode.card-title {

@@ -11,7 +11,16 @@ export default function ResearchDetails() {
     const { id } = useParams();
     const history = useHistory();
     const { isDark } = useContext(StyleContext);
-    const project = researchSection.projects[id];
+
+    // Parse the ID which is in format: section-name-index
+    const idParts = id.split('-');
+    const projectIndex = parseInt(idParts.pop());
+    const sectionTitleSlug = idParts.join('-');
+
+    const section = researchSection.sections.find(
+        (s) => s.title.toLowerCase().replace(/\s/g, '-') === sectionTitleSlug
+    );
+    const project = section ? section.projects[projectIndex] : null;
 
     if (!project) {
         return (
