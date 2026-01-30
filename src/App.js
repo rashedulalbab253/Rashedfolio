@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.scss";
 import Main from "./containers/Main";
+import BlogPage from "./containers/blogPage/BlogPage";
 import ResearchDetails from "./containers/researchDetails/ResearchDetails";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { StyleProvider } from "./contexts/StyleContext";
@@ -21,6 +22,7 @@ function App() {
           <ScrollToTop />
           <Switch>
             <Route exact path="/" component={Main} />
+            <Route path="/blogs" component={BlogPage} />
             <Route path="/research-details/:id" component={ResearchDetails} />
           </Switch>
         </Router>
