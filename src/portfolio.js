@@ -538,19 +538,13 @@ const blogSection = {
   title: "Blogs",
   subtitle:
     "Sharing insights and tutorials on emerging technologies, AI research, and software development.",
-  displayMediumBlogs: "true", // Set true to display fetched medium blogs instead of hardcoded ones
+  displayMediumBlogs: "false", // Set true to display fetched medium blogs instead of hardcoded ones
   blogs: [
     {
-      url: "https://blog.usejournal.com/create-a-google-assistant-action-and-win-a-google-t-shirt-and-cloud-credits-4a8d86d76eae",
-      title: "Win a Google Assistant Tshirt and $200 in Google Cloud Credits",
+      url: "https://arxiv.org/abs/2410.07176",
+      title: "Astute RAG: Overcoming Imperfect Retrieval Augmentation and Knowledge",
       description:
-        "Do you want to win $200 and Google Assistant Tshirt by creating a Google Assistant Action in less then 30 min?"
-    },
-    {
-      url: "https://medium.com/@saadpasta/why-react-is-the-best-5a97563f423e",
-      title: "Why REACT is The Best?",
-      description:
-        "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
+        "Retrieval-Augmented Generation (RAG) models often grapple with challenges stemming from the use of imperfect, irrelevant, or misleading information during the retrieval process. Despite the prevalence of these issues, there is scant research on the conflicts that arise between a large language model's (LLM) internal knowledge and the external sources it retrieves from. To address this gap, here introduced Astute RAG, a refined approach designed to enhance the synergy between LLMs and retrieval systems. Astute RAG improves upon traditional RAG models by meticulously combining consistent information from both internal and external sources. It employs advanced mechanisms to identify and resolve conflicts between these sources, ensuring that only relevant and accurate information influences the generation process."
     }
   ],
   display: true // Set false to hide this section, defaults to true
