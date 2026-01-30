@@ -49,15 +49,24 @@ const socialMediaLinks = {
 // Skills Section
 
 const skillsSection = {
-  title: "What I do",
-  subTitle: "A passionate researcher and developer focused on building intelligent systems and human-centered AI solutions.",
+  title: "Technical Skills",
+  subTitle: "A comprehensive skill set spanning AI/ML, Computer Vision, Software Development, and Hardware Engineering.",
   skills: [
     emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
+      "⚡ Programming: Python, MATLAB, C/C++, LaTeX"
     ),
-    emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
+    emoji("⚡ Tools & Frameworks: PyTorch, TensorFlow, Keras DL framework, Scikit-Learn, Huggingface Transformers"),
     emoji(
-      "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean"
+      "⚡ Software & DevOps: Simulink, Proteus, AutoCAD, FastAPI, Docker, Git, LangGraph"
+    ),
+    emoji(
+      "⚡ AI/ML: Core Machine Learning (Supervised and Unsupervised Learning), Deep Learning (Neural Networks, Transformer), Fundamentals of NLP, LLM, Multimodal LLM, Rag, Generative Models (GAN), Reinforcement Learning"
+    ),
+    emoji(
+      "⚡ Computer Vision: Image Segmentation, Object Detection, Digital Image Processing (Feature Extraction, Enhancement), Optical Character Recognition (OCR), Vision Language Model (VLM)"
+    ),
+    emoji(
+      "⚡ Hardware Skills: Arduino, FPGA"
     )
   ],
 
@@ -66,59 +75,55 @@ https://fontawesome.com/icons?d=gallery */
 
   softwareSkills: [
     {
-      skillName: "html-5",
-      fontAwesomeClassname: "fab fa-html5"
+      skillName: "python",
+      fontAwesomeClassname: "fab fa-python"
     },
     {
-      skillName: "css3",
-      fontAwesomeClassname: "fab fa-css3-alt"
+      skillName: "pytorch",
+      fontAwesomeClassname: "fas fa-fire"
     },
     {
-      skillName: "sass",
-      fontAwesomeClassname: "fab fa-sass"
+      skillName: "tensorflow",
+      fontAwesomeClassname: "fas fa-brain"
     },
     {
-      skillName: "JavaScript",
-      fontAwesomeClassname: "fab fa-js"
+      skillName: "docker",
+      fontAwesomeClassname: "fab fa-docker"
     },
     {
-      skillName: "reactjs",
-      fontAwesomeClassname: "fab fa-react"
-    },
-    {
-      skillName: "nodejs",
-      fontAwesomeClassname: "fab fa-node"
-    },
-    {
-      skillName: "swift",
-      fontAwesomeClassname: "fab fa-swift"
-    },
-    {
-      skillName: "npm",
-      fontAwesomeClassname: "fab fa-npm"
-    },
-    {
-      skillName: "sql-database",
-      fontAwesomeClassname: "fas fa-database"
+      skillName: "git",
+      fontAwesomeClassname: "fab fa-git-alt"
     },
     {
       skillName: "aws",
       fontAwesomeClassname: "fab fa-aws"
     },
     {
-      skillName: "firebase",
-      fontAwesomeClassname: "fas fa-fire"
+      skillName: "C++",
+      fontAwesomeClassname: "fas fa-code"
     },
     {
-      skillName: "python",
-      fontAwesomeClassname: "fab fa-python"
+      skillName: "MATLAB",
+      fontAwesomeClassname: "fas fa-chart-line"
     },
     {
-      skillName: "docker",
-      fontAwesomeClassname: "fab fa-docker"
+      skillName: "arduino",
+      fontAwesomeClassname: "fas fa-microchip"
+    },
+    {
+      skillName: "Computer Vision",
+      fontAwesomeClassname: "fas fa-eye"
+    },
+    {
+      skillName: "Machine Learning",
+      fontAwesomeClassname: "fas fa-robot"
+    },
+    {
+      skillName: "Deep Learning",
+      fontAwesomeClassname: "fas fa-network-wired"
     }
   ],
-  display: false // Set false to hide this section, defaults to true
+  display: true // Set false to hide this section, defaults to true
 };
 
 // Education Section

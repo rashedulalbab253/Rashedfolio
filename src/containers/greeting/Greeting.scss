@@ -257,6 +257,104 @@
   }
 }
 
+/* Hero Skills Section */
+.hero-skills-section {
+  margin: 30px 0;
+  width: 100%;
+}
+
+.hero-skills-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: $textColor;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, $main-color 0%, #ff8c42 100%);
+    border-radius: 2px;
+  }
+}
+
+.dark-mode.hero-skills-title {
+  color: white;
+}
+
+.hero-skills-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.hero-skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 10px;
+  background: white;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 106, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: $main-color;
+    box-shadow: 0 8px 20px rgba(255, 106, 0, 0.2);
+
+    .hero-skill-icon {
+      transform: scale(1.2);
+      color: $main-color;
+    }
+  }
+}
+
+.dark-mode.hero-skill-item {
+  background: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(10px);
+  border-color: rgba(255, 106, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    border-color: $main-color;
+    box-shadow: 0 8px 20px rgba(255, 106, 0, 0.3);
+  }
+}
+
+.hero-skill-icon {
+  font-size: 28px;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .hero-skill-icon {
+  color: #ffa366;
+}
+
+.hero-skill-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+
+.dark-mode .hero-skill-name {
+  color: #e0e0e0;
+}
+
 /* Media Query */
 @media (max-width: 1380px) {
   .greeting-text {
@@ -265,6 +363,11 @@
 
   .greeting-text-p {
     font-size: 20px;
+  }
+
+  .hero-skills-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
   }
 }
 
@@ -300,10 +403,36 @@
     width: 280px;
     height: 280px;
   }
+
+  .hero-skills-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .hero-skill-item {
+    padding: 12px 8px;
+  }
+
+  .hero-skill-icon {
+    font-size: 24px;
+  }
+
+  .hero-skill-name {
+    font-size: 12px;
+  }
+
+  .hero-skills-title {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 320px) {
   .main {
     width: auto;
+  }
+
+  .hero-skills-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 }
