@@ -427,7 +427,7 @@ const researchSection = {
   ],
   sections: [
     {
-      title: "Thesis",
+      title: "THESIS",
       projects: [
         {
           projectName: "LesionNet: A Custom CNN Model for Accurate Multiclass Classification of Dermoscopic Skin Lesions",
