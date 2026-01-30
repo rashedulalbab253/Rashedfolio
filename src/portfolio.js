@@ -542,9 +542,27 @@ const blogSection = {
   blogs: [
     {
       url: "https://arxiv.org/abs/2410.07176",
-      title: "Astute RAG: Overcoming Imperfect Retrieval Augmentation and Knowledge",
+      title: "Astute RAG for Robust Knowledge",
       description:
         "Retrieval-Augmented Generation (RAG) models often grapple with challenges stemming from the use of imperfect, irrelevant, or misleading information during the retrieval process. Despite the prevalence of these issues, there is scant research on the conflicts that arise between a large language model's (LLM) internal knowledge and the external sources it retrieves from. To address this gap, here introduced Astute RAG, a refined approach designed to enhance the synergy between LLMs and retrieval systems. Astute RAG improves upon traditional RAG models by meticulously combining consistent information from both internal and external sources. It employs advanced mechanisms to identify and resolve conflicts between these sources, ensuring that only relevant and accurate information influences the generation process."
+    },
+    {
+      url: "https://arxiv.org/abs/2104.08691",
+      title: "Fine Tuning, Prompt Tuning, and Prompt Engineering",
+      description:
+        "Fine Tuning adjusts the entire model to new tasks but requires substantial resources. Prompt Tuning, simpler and less intensive, involves adding trainable parameters (soft prompts) to the input without altering weights. Prompt Engineering purely relies on crafting effective inputs. Within Prompt Tuning, approaches include Soft Prompt Tuning (continuous embeddings) and RL Prompt Tuning (optimizing discrete tokens via reinforcement learning)."
+    },
+    {
+      url: "https://arxiv.org/abs/2106.09685",
+      title: "Efficiency in Large Language Model Training: LoRA, Qlora, Galore and QGalore",
+      description:
+        "Training LLMs is resource-intensive. LoRA (Low-Rank Adaptation) freezes pre-trained weights and injects trainable low-rank matrices to save memory. QLoRa builds on this with 4-bit quantization. Galore supports both pre-training and fine-tuning by approximating gradients using SVD, updating low-rank factors instead of full matrices. QGalore further enhances efficiency by using adaptive 4-bit gradient quantization and 8-bit weights."
+    },
+    {
+      url: "https://arxiv.org/abs/2311.09677",
+      title: "R-tuning: Teaching LLMs to Declare Uncertainty",
+      description:
+        "R-tuning addresses LLM hallucinations by teaching models to express certainty. The approach splits training data into correct (D1) and incorrect (D0) predictions. D1 responses are prepended with 'I am sure', while D0 uses 'I am unsure'. This explicit feedback trains the model to recognize its own knowledge limits, significantly improving performance on benchmarks like MMLU and ParaRel compared to standard models."
     }
   ],
   display: true // Set false to hide this section, defaults to true
