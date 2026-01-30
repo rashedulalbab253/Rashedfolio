@@ -179,7 +179,7 @@ const workExperiences = {
       title: "Research Experience",
       experiences: [
         {
-          title: "Reserach Assistant",
+          title: "Research Assistant",
           company: "Dept. of EEE, Sylhet Engineering College",
           //companylogo: "/works/logo.png",
           date: "Dec 2024 – Jul 2025",
