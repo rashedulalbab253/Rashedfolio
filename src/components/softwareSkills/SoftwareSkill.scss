@@ -16,8 +16,12 @@
 }
 
 .software-skill-inline>i {
-  color: rgba(255, 255, 255, 0.4);
+  color: #555;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark-mode .software-skill-inline>i {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .software-skill-inline>i:hover {
@@ -27,8 +31,12 @@
 }
 
 .software-skill-inline>p {
-  color: rgba(255, 255, 255, 0.4);
+  color: #555;
   font-size: 10px;
+}
+
+.dark-mode .software-skill-inline>p {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .software-skill-inline>i:hover~p {

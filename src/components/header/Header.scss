@@ -43,7 +43,7 @@
 
 .header li a {
   display: block;
-  padding: 15px 20px;
+  padding: 15px 10px;
   color: $textColor;
   text-decoration: none;
 }
@@ -174,10 +174,6 @@
 /* 48em = 768px */
 
 @media (min-width: 48em) {
-  .header li {
-    float: left;
-  }
-
   .header {
     display: flex;
     align-items: center;
@@ -186,6 +182,17 @@
 
   .header .menu {
     max-height: none;
+    display: flex;
+    align-items: center;
+    overflow: visible;
+  }
+
+  .header li {
+    float: none;
+  }
+
+  .header li:last-child {
+    padding: 0 10px;
   }
 
   .header .menu-icon {

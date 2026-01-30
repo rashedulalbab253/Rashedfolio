@@ -134,7 +134,7 @@ const educationInfo = {
     {
       schoolName: "Shahjalal University of Science & Technology",
       logo: "/works/sust_logo.png",
-      schoolUrl: "https://sec.ac.bd/",
+      schoolUrl: "https://www.sust.edu/",
       subHeader: "Bachelor of Science in Electrical and Electronic Engineering",
       duration: "January 2020 - July 2025",
       //desc: "Participated in the research of XXX and published 3 papers.",
@@ -550,13 +550,37 @@ const blogSection = {
       url: "https://arxiv.org/abs/2104.08691",
       title: "Fine Tuning, Prompt Tuning, and Prompt Engineering",
       description:
-        "Fine Tuning adjusts the entire model to new tasks but requires substantial resources. Prompt Tuning, simpler and less intensive, involves adding trainable parameters (soft prompts) to the input without altering weights. Prompt Engineering purely relies on crafting effective inputs. Within Prompt Tuning, approaches include Soft Prompt Tuning (continuous embeddings) and RL Prompt Tuning (optimizing discrete tokens via reinforcement learning)."
+        "Fine Tuning adjusts the entire model to new tasks but requires substantial resources. Prompt Tuning, simpler and less intensive, involves adding trainable parameters (soft prompts) to the input without altering weights. Prompt Engineering purely relies on crafting effective inputs. This paper (PEFT) explores parameter-efficient tuning methods like Soft Prompt Tuning."
+    },
+    {
+      url: "https://arxiv.org/abs/2205.12548",
+      title: "Reinforcement Learning (RL) Prompt Tuning",
+      description:
+        "RL prompt tuning optimizes prompts using reinforcement learning techniques. An agent generates prompts by selecting tokens to maximize a reward signal, requiring no gradient access. This makes it suitable for black-box models and allows for interpretable, flexible prompts adaptable to various architectures."
     },
     {
       url: "https://arxiv.org/abs/2106.09685",
-      title: "Efficiency in Large Language Model Training: LoRA, Qlora, Galore and QGalore",
+      title: "LoRA: Low-Rank Adaptation of Large Language Models",
       description:
-        "Training LLMs is resource-intensive. LoRA (Low-Rank Adaptation) freezes pre-trained weights and injects trainable low-rank matrices to save memory. QLoRa builds on this with 4-bit quantization. Galore supports both pre-training and fine-tuning by approximating gradients using SVD, updating low-rank factors instead of full matrices. QGalore further enhances efficiency by using adaptive 4-bit gradient quantization and 8-bit weights."
+        "LoRA introduces two trainable low-rank matrices into the model while freezing pre-trained weights. This drastically reduces the number of trainable parameters, enabling efficient fine-tuning with less memory usage while maintaining performance."
+    },
+    {
+      url: "https://arxiv.org/abs/2305.14314",
+      title: "QLoRa: Efficient Finetuning of Quantized LLMs",
+      description:
+        "Building on LoRA, QLoRa incorporates 4-bit quantization of the pre-trained model. This approach maintains the efficiency benefits of LoRA while further drastically reducing the memory footprint, allowing large models to run on consumer hardware."
+    },
+    {
+      url: "https://arxiv.org/abs/2403.03507",
+      title: "Galore: Memory-Efficient LLM Training by Gradient Low-Rank Projection",
+      description:
+        "Galore overcomes LoRA's limitation to fine-tuning by supporting full pre-training. It approximates the gradients themselves using SVD, breaking them into smaller low-rank factors (P and Q), which saves substantial memory compared to storing full gradient matrices."
+    },
+    {
+      url: "https://arxiv.org/abs/2407.08296",
+      title: "QGalore: Quantized Gradient Low-Rank Projection",
+      description:
+        "QGalore improves upon Galore by introducing adaptive quantization in gradient subspaces. It uses a 4-bit format for gradients and an 8-bit format for weights, allowing for even greater memory efficiency and dynamic adaptation during training."
     },
     {
       url: "https://arxiv.org/abs/2311.09677",
