@@ -1,25 +1,28 @@
 import React from "react";
 import "./BlogCard.scss";
+import { useHistory } from "react-router-dom";
 
-export default function BlogCard({blog, isDark}) {
-  function openUrlInNewTab(url, name) {
-    if (!url) {
-      console.log(`URL for ${name} not found`);
-      return;
-    }
-    var win = window.open(url, "_blank");
-    win.focus();
+export default function BlogCard({ blog, isDark, index }) {
+  const history = useHistory();
+
+  function openBlogDetail(e) {
+    e.preventDefault();
+    history.push(`/blog-details/${index}`);
   }
 
   return (
-    <div onClick={() => openUrlInNewTab(blog.url, blog.title)}>
+    <div onClick={openBlogDetail}>
       <div className={isDark ? "blog-container dark-mode" : "blog-container"}>
-        <a
+        <div
           className={
             isDark ? "dark-mode blog-card blog-card-shadow" : "blog-card"
           }
-          href="#blog"
         >
+          {blog.image && (
+            <div className="blog-card-image-container">
+              <img className="blog-card-image" src={blog.image} alt={blog.title} />
+            </div>
+          )}
           <h3 className={isDark ? "small-dark blog-title" : "blog-title"}>
             {blog.title}
           </h3>
@@ -29,7 +32,7 @@ export default function BlogCard({blog, isDark}) {
           <div className="go-corner">
             <div className="go-arrow">→</div>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   );

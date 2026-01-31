@@ -3,6 +3,7 @@ import Headroom from "react-headroom";
 import "./Header.scss";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import StyleContext from "../../contexts/StyleContext";
+import { Link } from "react-router-dom";
 import {
   greeting
 } from "../../portfolio";
@@ -14,11 +15,11 @@ function Header() {
   return (
     <Headroom>
       <header className={isDark ? "dark-menu header" : "header"}>
-        <a href="/" className="logo">
+        <Link to="/" className="logo">
           <span className="grey-color"> &lt;</span>
           <span className="logo-name">{greeting.username}</span>
           <span className="grey-color">/&gt;</span>
-        </a>
+        </Link>
         <input className="menu-btn" type="checkbox" id="menu-btn" />
         <label
           className="menu-icon"
@@ -29,7 +30,7 @@ function Header() {
         </label>
         <ul className={isDark ? "dark-menu menu" : "menu"}>
           <li>
-            <a href="/#greeting">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <a href="/#education">Education</a>
@@ -47,7 +48,7 @@ function Header() {
             <a href="/#skills">Skills</a>
           </li>
           <li>
-            <a href="/blogs">Blog</a>
+            <Link to="/blogs">Blog</Link>
           </li>
           <li>
             <a href="/#contact">Contact</a>

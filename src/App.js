@@ -3,6 +3,7 @@ import "./App.scss";
 import Main from "./containers/Main";
 import BlogPage from "./containers/blogPage/BlogPage";
 import ResearchDetails from "./containers/researchDetails/ResearchDetails";
+import BlogDetails from "./containers/blogDetails/BlogDetails";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { StyleProvider } from "./contexts/StyleContext";
 import { useLocalStorage } from "./hooks/useLocalStorage";
@@ -23,6 +24,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Main} />
             <Route path="/blogs" component={BlogPage} />
+            <Route path="/blog-details/:id" component={BlogDetails} />
             <Route path="/research-details/:id" component={ResearchDetails} />
           </Switch>
         </Router>

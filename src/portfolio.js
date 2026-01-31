@@ -542,52 +542,184 @@ const blogSection = {
   blogs: [
     {
       url: "https://arxiv.org/abs/2410.07176",
-      title: "Astute RAG for Robust Knowledge",
+      title: "Astute RAG: Overcoming Imperfect Retrieval Augmentation and Knowledge",
       description:
-        "Retrieval-Augmented Generation (RAG) models often grapple with challenges stemming from the use of imperfect, irrelevant, or misleading information during the retrieval process. Despite the prevalence of these issues, there is scant research on the conflicts that arise between a large language model's (LLM) internal knowledge and the external sources it retrieves from. To address this gap, here introduced Astute RAG, a refined approach designed to enhance the synergy between LLMs and retrieval systems. Astute RAG improves upon traditional RAG models by meticulously combining consistent information from both internal and external sources. It employs advanced mechanisms to identify and resolve conflicts between these sources, ensuring that only relevant and accurate information influences the generation process."
+        "Retrieval-Augmented Generation (RAG) models often grapple with challenges stemming from the use of imperfect, irrelevant, or misleading information during the retrieval process. Despite the prevalence of these issues, there is scant research on the conflicts that arise between a large language model's (LLM) internal knowledge and the external sources it retrieves from. To address this gap, here introduced Astute RAG, a refined approach designed to enhance the synergy between LLMs and retrieval systems.\n\nAstute RAG improves upon traditional RAG models by meticulously combining consistent information from both internal and external sources. It employs advanced mechanisms to identify and resolve conflicts between these sources, ensuring that only relevant and accurate information influences the generation process. By filtering the misleading or irrelevant content, Astute RAG significantly enhances the reliability and effectiveness of LLM outputs, making it a pivotal development in the field of augmented language models.",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+      footerLink: [
+        {
+          name: "Astute RAG Paper",
+          url: "https://arxiv.org/abs/2410.07176"
+        }
+      ]
     },
     {
       url: "https://arxiv.org/abs/2104.08691",
-      title: "Fine Tuning, Prompt Tuning, and Prompt Engineering",
+      title: "Differences Among Fine Tuning, Prompt Tuning, and Prompt Engineering",
       description:
-        "Fine Tuning adjusts the entire model to new tasks but requires substantial resources. Prompt Tuning, simpler and less intensive, involves adding trainable parameters (soft prompts) to the input without altering weights. Prompt Engineering purely relies on crafting effective inputs. This paper (PEFT) explores parameter-efficient tuning methods like Soft Prompt Tuning."
-    },
-    {
-      url: "https://arxiv.org/abs/2205.12548",
-      title: "Reinforcement Learning (RL) Prompt Tuning",
-      description:
-        "RL prompt tuning optimizes prompts using reinforcement learning techniques. An agent generates prompts by selecting tokens to maximize a reward signal, requiring no gradient access. This makes it suitable for black-box models and allows for interpretable, flexible prompts adaptable to various architectures."
+        "Differences Among Fine Tuning, Prompt Tuning, and Prompt Engineering\n\nFine Tuning:\nThis involves re-training a pre-trained model to adapt it for a specific task. It adjusts the model's weights through additional training, which can require significant computational resources. The entire model is updated to optimize performance for the new task.\n\nPrompt Tuning:\nUnlike fine tuning, prompt tuning involves adding a set of trainable parameters (or soft prompts) to the input without altering the original model’s weights. This approach allows the model to adapt to new tasks while keeping the pre-existing weights fixed, making it less computationally intensive than fine tuning.\n\nPrompt Engineering:\nThis method relies entirely on crafting effective input prompts for the model. It does not involve any computational training or modification of model parameters. Prompt engineering is about designing prompts that effectively guide the model to generate the desired output.\n\nTwo Approaches to Prompt Tuning:\n- Soft Prompt Tuning: This approach uses gradient descent to optimize continuous embedding vectors that are attached to the language model’s input. While soft prompts can be effective, they are typically hard for humans to interpret, which can obscure understanding of the model’s decision-making processes. Additionally, these prompts are not reusable across different models and require access to the model's internal gradients, which can be computationally expensive.\n- Reinforcement Learning (RL) Prompt Tuning: RL prompt tuning optimizes prompts using reinforcement learning techniques. In this method, an agent generates prompts by selecting tokens in a way that maximizes a reward signal derived from the model’s performance on a task. This approach does not require gradient information from the language model, making it suitable for models where gradient access is impractical. RL prompts are specifically tuned for input scenarios and are interpretable, allowing them to handle diverse textual styles. They are also flexible and can be adapted to different models, such as left-to-right models like GPT or masked models like BERT.\n\nConclusion:\nFine tuning adjusts the entire model to new tasks but requires substantial resources. Prompt tuning modifies input handling to adapt the model with less resource expenditure, and prompt engineering creatively utilizes designed inputs to steer model outputs without any training.",
+      image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=800",
+      footerLink: [
+        {
+          name: "PEFT Paper",
+          url: "https://arxiv.org/abs/2104.08691"
+        },
+        {
+          name: "RL-Prompt Paper",
+          url: "https://arxiv.org/abs/2205.12548"
+        }
+      ]
     },
     {
       url: "https://arxiv.org/abs/2106.09685",
-      title: "LoRA: Low-Rank Adaptation of Large Language Models",
+      title: "Efficiency in LLM Training: LoRA, QLoRa, Galore, and QGalore",
       description:
-        "LoRA introduces two trainable low-rank matrices into the model while freezing pre-trained weights. This drastically reduces the number of trainable parameters, enabling efficient fine-tuning with less memory usage while maintaining performance."
-    },
-    {
-      url: "https://arxiv.org/abs/2305.14314",
-      title: "QLoRa: Efficient Finetuning of Quantized LLMs",
-      description:
-        "Building on LoRA, QLoRa incorporates 4-bit quantization of the pre-trained model. This approach maintains the efficiency benefits of LoRA while further drastically reducing the memory footprint, allowing large models to run on consumer hardware."
-    },
-    {
-      url: "https://arxiv.org/abs/2403.03507",
-      title: "Galore: Memory-Efficient LLM Training by Gradient Low-Rank Projection",
-      description:
-        "Galore overcomes LoRA's limitation to fine-tuning by supporting full pre-training. It approximates the gradients themselves using SVD, breaking them into smaller low-rank factors (P and Q), which saves substantial memory compared to storing full gradient matrices."
-    },
-    {
-      url: "https://arxiv.org/abs/2407.08296",
-      title: "QGalore: Quantized Gradient Low-Rank Projection",
-      description:
-        "QGalore improves upon Galore by introducing adaptive quantization in gradient subspaces. It uses a 4-bit format for gradients and an 8-bit format for weights, allowing for even greater memory efficiency and dynamic adaptation during training."
+        "Training large language models (LLMs) is a resource-intensive process, primarily due to the vast number of parameters involved. Various methods have been developed to improve the efficiency of this process, focusing on reducing memory usage without significantly sacrificing model performance.\n\nLoRA: Low-Rank Adaptation\n\nLoRA (Low-Rank Adaptation) is a technique that introduces two low-rank matrices, A and B, into the training process. This method allows the freezing of pre-trained model weights, thereby reducing the number of trainable parameters. By focusing only on adapting these low-rank matrices, LoRA enables finer model tuning while leveraging existing, well-optimized model architectures.\n\nQLoRa: Quantized Low-Rank Adaptation\n\nBuilding on the foundation of LoRA, QLoRa incorporates a 4-bit quantized pre-trained model with low-rank adapters. This approach aims to maintain the efficiency benefits of LoRA while further reducing the memory footprint through quantization.\n\nGalore: Gradient Approximation for Low-Rank Updates\n\nDespite its advantages, one limitation of LoRA is that it only supports fine-tuning and may result in degraded accuracy. Galore addresses this by supporting both pre-training and fine-tuning phases. Unlike LoRA, which approximates weight updates, Galore approximates the gradients themselves. It uses Singular Value Decomposition (SVD) to decompose each gradient matrix into two smaller matrices, P and Q, aiming to reconstruct an approximation of the gradient matrix. This method allows Galore to update the low-rank factors P and Q iteratively, optimizing memory usage by only storing these factors instead of the entire gradient matrix.\n\nQGalore: Adaptive Quantization in Gradient Subspaces\n\nTo enhance the efficiency of Galore, QGalore introduces adaptive updates within the gradient subspaces while maintaining a compact memory format. It preserves the gradient matrix in a 4-bit format for memory efficiency and uses an 8-bit format for weights, in contrast to the 16-bit representation typically used in Galore. This quantization not only reduces the memory requirements further but also allows the model to adapt more dynamically to changes in the gradient subspace.",
+      image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=800",
+      footerLink: [
+        {
+          name: "LoRA Paper",
+          url: "https://arxiv.org/abs/2106.09685"
+        },
+        {
+          name: "QLoRa Paper",
+          url: "https://arxiv.org/abs/2305.14314"
+        },
+        {
+          name: "Galore Paper",
+          url: "https://arxiv.org/abs/2403.03507"
+        },
+        {
+          name: "QGalore Paper",
+          url: "https://arxiv.org/abs/2407.08296"
+        }
+      ]
     },
     {
       url: "https://arxiv.org/abs/2311.09677",
-      title: "R-tuning: Teaching LLMs to Declare Uncertainty",
+      title: "R-Tuning: Teaching LLMs to Declare Uncertainty",
       description:
-        "R-tuning addresses LLM hallucinations by teaching models to express certainty. The approach splits training data into correct (D1) and incorrect (D0) predictions. D1 responses are prepended with 'I am sure', while D0 uses 'I am unsure'. This explicit feedback trains the model to recognize its own knowledge limits, significantly improving performance on benchmarks like MMLU and ParaRel compared to standard models."
-    }
+        "Large language models (LLMs) often face issues with generating incorrect or hallucinated content. Various methods have been proposed to address this challenge, one of which includes the use of Retrieval Augmented Generation (RAG) techniques. This paper introduces a novel approach called R-tuning, aimed at teaching LLMs to better handle uncertainty in questions.\n\nThey applied a pre-trained model to a dataset composed of questions and their corresponding answers. This dataset was divided into two subsets based on the congruence between the predicted and actual answers:\n- D0: The subset where the model’s prediction does not match the ground truth.\n- D1: The subset where the model’s prediction aligns with the ground truth.\n\nIn the D1 subset, where predictions were accurate, they prepended the phrase \"I am sure\" to the model's responses. Conversely, in the D0 subset, where predictions were incorrect, they used the padding \"I am unsure.\" This method of explicit feedback helps the model learn to express certainty or uncertainty based on the context of the information provided.\n\nThe implementation of this R-tuning approach has demonstrated significant improvements over traditional LLM setups. When tested against well-known models such as Llama 7b and Llama 13b, their method showed superior performance on diverse datasets including MMLU, which features multiple-choice questions, and ParaRel, which involves predicting answers. By integrating phrases that indicate confidence, the model not only learns to recognize its own certainty levels but also enhances its reliability by openly expressing uncertainty when appropriate.\n\nThis R-tuning strategy marks a promising advance in the development of more reliable and self-aware language models. By enabling LLMs to acknowledge and communicate the certainty of their responses, they can significantly reduce the occurrence of hallucinations and increase the trustworthiness of model-generated content.",
+      image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=800",
+      footerLink: [
+        {
+          name: "R-Tuning Paper",
+          url: "https://arxiv.org/abs/2311.09677"
+        }
+      ]
+    },
+    {
+      url: "https://arxiv.org/abs/2205.14135",
+      title: "Flash Attention: Overcoming Memory Access Bottlenecks",
+      description:
+        "Attention mechanisms are pivotal in modeling sequences in deep learning. Vanilla attention, with its complexity of O(n²), involves multiplying queries with keys and values, which can be computationally expensive. To optimize this, methods like sparse attention and low-rank approximations have been introduced. However, these methods are mere approximations of the exact attention mechanism.\n\nFlash Attention: A Breakthrough in Attention Mechanism Efficiency\n\nFlash Attention emerges as a true game-changer by providing exact attention computations with significantly reduced complexity. Unlike Vanilla Attention, Flash Attention addresses both FLOPS and memory access overheads, boasting an attention time complexity of O(n). This is a stark improvement over the O(n log n) complexity of models like the Reformer.\n\nMemory Hierarchy and GPU Utilization\n\nThe performance of attention mechanisms is also tightly coupled with memory hierarchy utilization:\n- Storage Devices: From hard disks to GPUs, each storage level plays a crucial role. GPUs excel due to their parallelism.\n- GPU Architecture: Modern GPUs like the NVIDIA A100 feature streaming multiprocessors with specialized tensor and CUDA cores, supported by L1/shared memory (SRAM).\n- Memory Hierarchy in GPUs: Data travels from HBM to L2 cache and finally to local SRAM. Flash Attention optimizes this data movement.\n\nOptimizing GPU Utilization with Flash Attention\n\nFlash Attention maximizes the use of tensor cores which are approximately 200 times faster than standard GPU memory. It leverages High Bandwidth Memory (HBM) technology through:\n- Tiling and Recomputation: Flash Attention employs tiling to split the matrix into manageable chunks processed in SRAM, and uses recomputation during backpropagation to save memory.\n- Kernel Fusion: This technique combines operations in tensor cores without frequent data transfers back to GPU memory, reducing synchronization overhead.\n- Block Sparse Attention: This method applies attention sparsely within blocks to compute results at a much faster rate.\n\nPerformance and Efficiency\n\nUsing techniques like kernel fusion and block sparse attention, Flash Attention enhances the speed and efficiency of models like BERT and GPT-2 significantly. Benchmarks show it outperforms Vanilla Attention and other approximations like Linformer, particularly in handling longer sequences on single GPU setups.",
+      image: "/blog_images/flash_attention.png",
+      footerLink: [
+        {
+          name: "Flash Attention Paper",
+          url: "https://arxiv.org/abs/2205.14135"
+        }
+      ]
+    },
+    {
+      url: "https://github.com/rashedulalbab253",
+      title: "Decoding Activation Functions: From Sigmoid to SELU",
+      description:
+        "Activation functions play a crucial role in neural networks, typically employed in hidden and output layers, but not in input layers. By default, the absence of an activation function implies a linear activation. Here's a closer look at several common types:\n\nSigmoid:\nCharacterized by its S-shaped curve, the sigmoid function outputs values between 0 and 1 for any input ranging from negative to positive infinity. While useful, it is prone to causing vanishing gradient issues due to its output range, and its outputs are not zero-centered.\n\nTanh (Hyperbolic Tangent):\nSimilar to the sigmoid in shape but outputs values from -1 to 1. It offers stronger gradients than sigmoid, making it more effective in some cases. However, it still suffers from vanishing gradient problems like its sigmoid counterpart.\n\nReLU (Rectified Linear Unit):\nThis function addresses some of the drawbacks of sigmoid and tanh by outputting the input directly if it is positive; otherwise, it outputs zero. Although it helps mitigate vanishing gradient issues, ReLU is not differentiable at zero and can lead to \"dying neurons\" where outputs become zero for all negative inputs.\n\nLeaky ReLU:\nTo avoid the dying neuron issue, Leaky ReLU modifies ReLU by allowing a small, non-zero output for negative inputs. Typically, the equation is f(x) = x if x > 0, otherwise f(x) = 0.01x. Variants like randomized and parametric Leaky ReLU allow for the negative slope to be randomized or learned during training, adding flexibility.\n\nParametric ReLU (PReLU):\nThis function generalizes Leaky ReLU by making the negative slope a parameter that is learned during training, rather than being a fixed value. This flexibility can lead to better model performance but increases model complexity.\n\nSigmoid Linear Unit (SiLU):\nSiLU, or Swish, combines properties of sigmoid and ReLU, promoting smooth and non-monotonic function that dynamically adjusts based on the input value, improving model performance.\n\nSoftplus:\nThis function serves as a smooth approximation of ReLU, defined as f(x) = ln(1 + exp(x)). It smoothly transitions outputs based on the input but can be computationally intensive and may still encounter vanishing gradients for very negative inputs.\n\nGaussian Error Linear Unit (GELU):\nGELU is both smooth and monotonic, making it highly effective in neural network layers. The function is defined as f(x) = x * φ(x), where φ(x) represents the cumulative distribution function of Gaussian. This setup allows for a slight output even for negative inputs close to zero, while larger negative inputs tend toward zero.\n\nExponential Linear Unit (ELU):\nELU improves upon the ReLU by outputting non-zero values for negative inputs, thereby solving the dying neuron problem. The function formula is f(x) = x if x > 0, otherwise f(x) = α(exp(x) - 1). This characteristic enhances the backpropagation process through negative regions and generally results in faster convergence.\n\nScaled Exponential Linear Unit (SELU):\nBuilding on the advantages of ELU, SELU is designed to be self-normalizing. It automatically scales outputs of neurons to maintain a mean of zero and standard deviation of one across layers, which helps in stabilizing the gradient in deep networks. λ and α are predefined constants that ensure self-normalization.\n\nActivation Function Hierarchy (Performance Ranking):\nIn practice, the performance hierarchy often observed is:\n- SELU (Highest Stability)\n- ELU\n- Leaky ReLU\n- ReLU\n- Tanh\n- Logistic / Sigmoid\n\nThis ranking is based on each function's ability to handle issues like vanishing gradients and neuron death, as well as their impact on the speed of convergence and generalization in different neural network architectures.",
+      image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=800",
+      footerLink: [
+        {
+          name: "Learn More",
+          url: "https://github.com/rashedulalbab253"
+        }
+      ]
+    },
+    {
+      url: "https://arxiv.org/abs/2404.19756",
+      title: "KAN: Kolmogorov-Arnold Networks",
+      description:
+        "Introducing Kolmogorov-Arnold Networks (KANs):\nA Novel Approach to Deep Learning Architectures\n\nWhile Multilayer Perceptrons (MLPs) have been foundational to the development of deep learning architectures, their design places activation functions directly on neurons. In this work, they propose a transformative approach called Kolmogorov-Arnold Networks (KANs), which repositions activation functions from neurons to the connections between them—specifically, on the weights.\n\nTheoretical Foundation:\nThis research demonstrates that KANs offer improved accuracy and interpretability over traditional MLPs. This approach is based on the Kolmogorov-Arnold representation theorem (KART), contrasting sharply with the universal approximation theorem (UAT) that inspires MLPs. While UAT posits that a network cannot achieve infinite accuracy with a fixed width, KART suggests the possibility under certain conditions.\n\nCore Innovation:\nThe core innovation of KANs involves two-layer networks where activation functions are learnable and positioned on the edges, representing a shift from neuron-centric to connection-centric neural design. This concept honors the legacies of mathematicians Andrey Kolmogorov and Vladimir Arnold, whose work underpins our theoretical framework.\n\nFuture Impact:\nIt marks a significant step forward in exploring alternative deep learning models that could potentially revolutionize how neural networks are conceptualized and implemented in various fields of artificial intelligence.\n\nConclusion:\nBy repositioning learnable activation functions to the weights, KANs provide a mathematically robust and interpretable alternative to the standard MLP architectures that have dominated the field for decades.",
+      image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=800",
+      footerLink: [
+        {
+          name: "KAN Research Paper",
+          url: "https://arxiv.org/abs/2404.19756"
+        }
+      ]
+    },
+    {
+      url: "https://arxiv.org/abs/2405.04517",
+      title: "LSTM vs xLSTM: Evolution of Recurrent Architectures",
+      description:
+        "Understanding LSTM and its Variants for Sequence Modeling\n\nLSTM (Long Short-Term Memory) networks are a compelling choice for stock market prediction due to their ability to handle long sequence data effectively. Unlike n-gram models, which are essentially large collections of tokens, LSTM networks can process sequences of indefinite length thanks to their unique architectural features.\n\nxLSTM Architecture:\nxLSTM networks incorporate two types of memory cells: the standard LSTM (sLSTM) and the modified LSTM (mLSTM). The sLSTM introduces a new memory mixing technique that enhances its ability to manage sequence information dynamically. This model is structured with alternate stacking layers (s layer and m layer), allowing for sophisticated data processing flows.\n\nCore Improvements:\nOne significant enhancement in the mLSTM is the addition of Matrix Memory, which provides extra memory capacity and supports parallelizable training, similar to attention mechanisms in Transformers. This feature allows LSTMs to outperform when dealing with tasks requiring constant memory attention.\n\nChallenges and Innovations:\nDespite their strengths, LSTMs encounter vanishing and exploding gradient issues. These arise when gradients are multiplied recursively. Traditional LSTMs also suffer from non-parallelizability, necessitating sequential processing.\n\nTo mitigate the vanishing gradient problem, the sLSTM variant removes the sigmoid nonlinearity in favor of an exponential function. This approach involves normalizing the output of each hidden state and employing gradient clipping to maintain stability.\n\nmLSTM: Enhancing Memory Utilization\nThe mLSTM configuration introduces a novel approach to memory utilization by storing vectors in a matrix, with the matrix columns acting as keys for retrieval. This aspect underscores the practical improvements when applying mLSTM in scenarios like time series forecasting, where its recurrent capabilities are beneficial.\n\nConclusion:\nWhile there is no definitive superior model for all tasks, the variations and improvements in LSTM designs, such as sLSTM and mLSTM, demonstrate their versatility and potential in applications like time series forecasting. Future work continues to leverage techniques from other architectures to address LSTM’s inherent limitations.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1080&auto=format&fit=crop",
+      footerLink: [
+        {
+          name: "xLSTM Research Paper",
+          url: "https://arxiv.org/abs/2405.04517"
+        }
+      ]
+    },
+    {
+      url: "https://arxiv.org/abs/2302.05737",
+      title: "Text Generation via Discrete Diffusion Models",
+      description:
+        "Text Generation via Discrete Diffusion Models\n\nDiffusion models, originally celebrated for their efficacy in generating high-quality images, audio, and video, have now made significant strides in text generation. Unlike traditional autoregressive models, discrete diffusion models have emerged as potent tools capable of producing text with high fidelity, positioning them as valuable complements to models like GPT.\n\nUnderstanding Diffusion Models:\nDiffusion models work by gradually introducing noise into a data sample until it is fully randomized, and then methodically reversing this process during inference to generate coherent outputs. This technique is intuitive for continuous data like images but presents unique challenges when applied to the discrete and symbolic nature of text.\n\nChallenges in Text Diffusion:\nIn text generation, the transition from one token to another isn't as direct as it is in images. To address this, developers have adapted diffusion models specifically for text by focusing on the probability vectors of tokens rather than the tokens themselves.\n\nDiscrete Diffusion Models for Text:\nThe discrete diffusion model innovatively applies diffusion processes to the probability vectors that represent the likelihood of each token in the vocabulary. Unlike BERT, which only masks 15% of tokens, the discrete diffusion model can handle a varying range of masked tokens—from 0% to 100%.\n\nAdvantages Over BERT:\nOne significant advantage lies in its flexibility and the breadth of its masking capability, allowing it to learn from a broader context and more complex patterns. This approach pushes the boundaries of what's possible in natural language processing by overcoming the limitations inherent in traditional generative models.",
+      image: "/blog_images/discrete_diffusion.png",
+      footerLink: [
+        {
+          name: "Discrete Diffusion Paper",
+          url: "https://arxiv.org/abs/2302.05737"
+        }
+      ]
+    },
+    {
+      url: "https://arxiv.org/abs/2305.14282",
+      title: "InstructScore: Explainable Evaluation for Text Generation",
+      description:
+        "InstructScore: Enhancing Explainability in Text Generation Evaluation\n\nThe paper introduces InstructScore, a novel method for evaluating text generation that surpasses traditional models by providing detailed, explainable feedback instead of mere scores. This approach aims to offer deeper insights into the evaluation process, improving both transparency and utility.\n\nProcess Overview:\nThe evaluation begins by generating a seed example using GPT-4, which is intentionally crafted to include errors. This error-laden data is then used to fine-tune a Llama model, adapting it to recognize and adjust for similar issues in future outputs.\n\nIterative Refinement and Feedback:\nFollowing fine-tuning, the Llama model is queried with specific questions that probe its understanding and handling of the input text. The responses from Llama undergo a rigorous evaluation process involving both automated tools and human reviewers. This stage assesses the alignment of the generated text with expected standards and outputs an alignment score.\n\nMeta-Feedback for Continuous Improvement:\nThe feedback, rich in specifics, is then fed back into the Llama model as part of a meta-feedback system. This iterative process not only refines the model’s performance but also enhances its ability to generate explanations for its text outputs.\n\nConclusion:\nInstructScore represents a significant advance in text generation evaluation by providing a framework that not only assesses textual outputs but also explains the basis of its evaluations. This method fosters greater understanding and trust in automated text generation systems, paving the way for more refined and accountable AI-driven content creation.",
+      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
+      footerLink: [
+        {
+          name: "InstructScore Paper",
+          url: "https://arxiv.org/abs/2305.14282"
+        }
+      ]
+    },
+    {
+      url: "https://arxiv.org/abs/2404.14469",
+      title: "SnapKV: Memory-Efficient Selective KV Caching",
+      description:
+        "SnapKV: Enhancing Memory Efficiency in LLMs with Selective KV Caching\n\nLarge Language Models (LLMs) are adept at processing extensive contexts but face challenges in managing the growth of the Key-Value (KV) cache, which can significantly impact memory use and processing time. To address these challenges, the paper introduces SnapKV, a novel approach that does not require fine-tuning.\n\nKey Innovation:\nSnapKV efficiently reduces the KV cache size while maintaining performance levels comparable to traditional methods. The innovation stems from the observation that specific attention heads consistently focus on particular features of the input during generation. By analyzing these patterns through an 'observation window,' SnapKV identifies and retains only the most impactful KV pairs, effectively compressing the KV cache.\n\nEfficiency and Performance:\nIn practical terms, SnapKV dramatically improves the efficiency of LLMs. It achieves a 3.6 times faster decoding speed and an 8.2 times improvement in memory efficiency when handling sequences up to 16K tokens. Moreover, it extends the capacity of LLMs to process up to 380K context tokens on a single A100-80GB GPU without a significant loss in accuracy.\n\nConclusion:\nSnapKV's advancements suggest it has significant potential for practical applications, particularly in scenarios requiring the processing of large datasets with resource constraints. This approach not only conserves computational resources but also paves the way for more sustainable and scalable implementations of LLMs.",
+      image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?q=80&w=1080&auto=format&fit=crop",
+      footerLink: [
+        {
+          name: "SnapKV Paper",
+          url: "https://arxiv.org/abs/2404.14469"
+        }
+      ]
+    },
+    {
+      url: "https://blog.google/products-and-platforms/products/gemini/gemini-3/",
+      title: "Google Gemini 3 Pro: The New Frontier in LLMs",
+      description:
+        "In the rapidly evolving landscape of artificial intelligence, Google’s Gemini 3 Pro represents one of the most significant advances in large language model (LLM) research as of late 2025. Developed by Google DeepMind, this model extends beyond conventional language understanding to deliver state-of-the-art reasoning, deep multimodal comprehension, and phd-level analytical performance.\n\nFlagship Variant Capabilities:\nGemini 3 Pro is built as the flagship variant of the Gemini 3 family. Through improvements in architecture and training regimes, the model achieves exceptional results across major natural language and vision benchmarks. It has recorded breakthrough scores on tests such as LMArena (1501 Elo) and demonstrated robust reasoning performance even on complex scientific and mathematical tasks.\n\nMultimodal Intelligence:\nA defining feature of Gemini 3 Pro is its multimodal intelligence. Unlike earlier models restricted to text or simplistic image recognition, Gemini 3 Pro processes and synthesizes information across text, images, video, and spatial inputs. This enables it to interpret and reason about diagrams, spatial layouts, and scientific visualizations — tasks that are critically important in fields such as physics, biology, architecture, and medicine.\n\nExtended Context & Workflows:\nResearchers and developers can access Gemini 3 Pro through platforms like Google AI Studio and Vertex AI. The model’s support for extended long-context windows enables it to handle entire books, research papers, or large datasets in a single pass, drastically reducing context fragmentation.\n\nConclusion:\nGoogle’s Gemini 3 Pro is not merely another incremental update; it represents a paradigm shift in how large language models can engage with multimodal data and reasoning. Its robust performance on challenging benchmarks makes it a compelling subject for academic discussion and a powerful tool for PhD-level research and practical applications.",
+      image: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1080&auto=format&fit=crop",
+      footerLink: [
+        {
+          name: "Launch Details",
+          url: "https://blog.google/products-and-platforms/products/gemini/gemini-3/?utm_source=chatgpt.com"
+        },
+        {
+          name: "Multimodal Vision",
+          url: "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-3-pro-vision/?utm_source=chatgpt.com"
+        },
+        {
+          name: "Developer Overview",
+          url: "https://blog.google/technology/developers/gemini-3-developers/?utm_source=chatgpt.com"
+        }
+      ]
+    },
   ],
   display: true // Set false to hide this section, defaults to true
 };
