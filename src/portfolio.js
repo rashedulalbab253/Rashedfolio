@@ -35,7 +35,7 @@ const greeting = {
 const socialMediaLinks = {
   github: "https://github.com/rashedulalbab253",
   linkedin: "https://www.linkedin.com/in/rashedul-albab/",
-  gmail: "albabahmed74@@gmail.com",
+  gmail: "albabahmed74@gmail.com",
   //gitlab: "https://gitlab.com/saadpasta",
   facebook: "https://www.facebook.com/rashedul.albab",
   researchgate: "https://www.researchgate.net/profile/Rashedul-Albab?ev=hdr_xprf",
@@ -60,7 +60,7 @@ const skillsSection = {
       "⚡ Software & DevOps: Simulink, Proteus, AutoCAD, FastAPI, Docker, Git, LangGraph"
     ),
     emoji(
-      "⚡ AI/ML: Core Machine Learning (Supervised and Unsupervised Learning), Deep Learning (Neural Networks, Transformer), Fundamentals of NLP, LLM, Multimodal LLM, Rag, Generative Models (GAN), Reinforcement Learning"
+      "⚡ AI/ML: Core Machine Learning (Supervised and Unsupervised Learning), Deep Learning (Neural Networks, Transformer), Fundamentals of NLP, LLM, Multimodal LLM, Rag, Generative Models (GAN)"
     ),
     emoji(
       "⚡ Computer Vision: Image Segmentation, Object Detection, Digital Image Processing (Feature Extraction, Enhancement), Optical Character Recognition (OCR), Vision Language Model (VLM)"
