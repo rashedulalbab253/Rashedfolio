@@ -23,7 +23,7 @@ const greeting = {
   username: "Rashedul Albab",
   title: "Hi all, I'm Rashed",
   subTitle: emoji(
-    "I’m a Prospective Machine Learning Engineer and PhD candidate with an EEE background, working across Computer Vision, NLP, AI-driven Electromagnetic Systems, and Healthcare AI to transform research innovations into scalable, real-world solutions."
+    "AI Researcher & PhD Candidate with an EEE foundation, specializing in the synergy between Physics-Informed AI and Modern Multimodal Systems. My research bridges Computer Vision, NLP, and Behavioral AI to revolutionize Healthcare, Renewable Energy, and AI-Driven Electromagnetic Systems—transforming high-impact theory into resilient, real-world engineering solutions."
   ),
   resumeLink:
     "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
@@ -190,8 +190,7 @@ const workExperiences = {
           date: "Dec 2024 – Jul 2025",
           desc: "Assisted in research projects focused on Machine Learning, Computer Vision, and AI applications.",
           descBullets: [
-            "Conducted  research on explainable machine learning for multi-class power quality disturbance classification, implementing preprocessing pipelines, classical ML models (LR, SVM, RF, XGBoost), and a 1D-CNN architecture.",
-            "Performed model interpretability analysis using SHAP and feature importance methods."
+            "Conducted  research on explainable machine learning for multi-class power quality disturbance classification, implementing preprocessing pipelines, classical ML models (LR, SVM, RF, XGBoost), and a 1D-CNN architecture,accepted at ICCIT(IEEE),2025.", "Performed model interpretability analysis using SHAP and feature importance methods."
 
           ],
           url: "https://sec.ac.bd/"
@@ -211,7 +210,7 @@ const workExperiences = {
       ]
     },
     {
-      title: "Professional Experience",
+      title: "Professional Experiences",
       experiences: [
         {
           title: "Machine Learning Engineer Intern",
@@ -228,7 +227,7 @@ const workExperiences = {
       ]
     },
     {
-      title: "Industrial  Experience",
+      title: "Industrial Experience",
       experiences: [
         {
           title: "Industrial Trainee",
@@ -263,7 +262,7 @@ const workExperiences = {
           company: "Odommo Academy",
           companylogo: "/works/odommo.jpeg",
           date: "Nov 2025 – Present",
-          desc: "Assisted in teaching C programming,HTML and Database Management System.",
+          desc: "Assisting in teaching C programming,HTML and Database Management System.",
           descBullets: [
             "created exam questions aimed at enhancing problem-solving skills and preparing students for competitive exams.",
 
@@ -284,16 +283,111 @@ const openSource = {
 
 // Some big projects you have worked on
 
+// Categorized Projects Structure
 const bigProjects = {
   title: "Projects",
-  subtitle: "A showcase of my work spanning AI/ML systems, Computer Vision, Multimodal AI, IoT systems, and Renewable Energy solution",
+  subtitle: "A showcase of my work spanning AI/ML systems, Computer Vision, Multimodal AI, IoT systems, and Renewable Energy solutions",
+
+  // Hierarchical project categories
+  categories: [
+    {
+      categoryName: "Generative AI & LLMs",
+      categoryIcon: "fas fa-brain",
+      projects: [
+        {
+          projectName: "MathRAG AI – Reliable Multimodal Math Problem Solver",
+          projectDesc: "Built an end-to-end AI Math Mentor that solves math problems using multimodal inputs (image, audio, text), explains solutions step-by-step, and improves via human feedback.",
+          footerLink: [{ name: "GitHub", url: "https://github.com/rashedulalbab253/AI_math_solver_system_" }]
+        },
+        {
+          projectName: "Albab ExamAI – AI-powered Exam Management System",
+          projectDesc: "A scalable platform using FastAPI and Groq Llama 3 for automated grading, real-time anti-cheat security, and crash-resilient exam sessions.",
+          footerLink: [{ name: "GitHub", url: "https://github.com/rashedulalbab253/GenAI-Assessment-Engine" }]
+        },
+        {
+          projectName: "Multi Agent Research Assistant (CrewAI)",
+          projectDesc: "Automates complex research workflows, analysis, and structured report generation using a modular multi-agent system.",
+          footerLink: [{ name: "GitHub", url: "https://github.com/rashedulalbab253/AI-Research-Orchestrator" }]
+        }
+      ]
+    },
+    {
+      categoryName: "Speech AI & NLP",
+      categoryIcon: "fas fa-microphone-alt",
+      projects: [
+        {
+          projectName: "BanglaVox AI: Context-Aware Neural Speech Translation System",
+          projectDesc: "An industry-grade English-Bengali NMT ecosystem featuring an 8-turn context memory buffer and sub-500ms latency optimized on Groq LPU. Deployed across Edge (Desktop App) and Cloud (Vercel Serverless) with full CI/CD.",
+          footerLink: [
+            { name: "GitHub", url: "https://github.com/rashedulalbab253/english-bengali-voice-ai" }
+          ]
+        }
+      ]
+    },
+    {
+      categoryName: "Computer Vision",
+      categoryIcon: "fas fa-eye",
+      projects: [
+        {
+          projectName: "BengalVision ALPR: AI-Powered Bangla Number Plate System",
+          projectDesc: "Real-time detection and recognition of Bangladeshi vehicle number plates using YOLOv11 and custom OCR, optimized with OpenVINO for edge deployment.",
+          footerLink: [{ name: "GitHub", url: "https://github.com/rashedulalbab253/BengalPlateAI" }]
+        },
+        {
+          projectName: "CourtVision: AI Powered Tennis Match Analysis",
+          projectDesc: "A high-performance system for tennis analytics, performing player tracking, ball detection, and court keypoint estimation.",
+          footerLink: [{ name: "GitHub", url: "https://github.com/rashedulalbab253/Tennis_analysis_system_using_YoloV12" }]
+        }
+      ]
+    },
+    {
+      categoryName: "Healthcare AI",
+      categoryIcon: "fas fa-heartbeat",
+      projects: [
+        {
+          projectName: "Medibot AI: Retrieval-Grounded Clinical Assistant",
+          projectDesc: "RAG-powered clinical chatbot orchestrating LLMs and vector retrieval for domain-grounded medical answers on AWS.",
+          footerLink: [{ name: "GitHub", url: "https://github.com/rashedulalbab253/Medibot_with-LLMs-LangChain-Pinecone-Flask-AWS" }]
+        },
+        {
+          projectName: "DermatoScan AI & LesionNet",
+          projectDesc: "End-to-end skin lesion classification systems achieving 97%+ accuracy using custom CNN architectures (LesionNet) and EfficientNet-B3.",
+          footerLink: [{ name: "GitHub", url: "https://github.com/rashedulalbab253/DermatoScan-End-to-End-AI" }]
+        }
+      ]
+    },
+    {
+      categoryName: "Renewable Energy Systems",
+      categoryIcon: "fas fa-solar-panel",
+      projects: [
+        {
+          projectName: "Feasibility Study for a Small-Scale PV Project in North Baghbari,Sylhet",
+          projectDesc: "Performed a techno-economic feasibility analysis of solar PV and wind energy systems using NREL's SAM, integrating weather and location data to evaluate system performance.",
+          footerLink: [{ name: "View Report", url: "/projects/Renewable_Energy_System_Project.pdf" }]
+        }
+      ]
+    },
+    {
+      categoryName: "IoT & Hardware Systems",
+      categoryIcon: "fas fa-microchip",
+      projects: [
+        {
+          projectName: "IoT Based Environmental Data Logger",
+          projectDesc: "Designed and implemented a real-time environmental monitoring system using ESP32 and multiple sensors with cloud-based data logging.",
+          footerLink: [{ name: "View Report", url: "/projects/IOT_bASED_DATA_LOGGER.pdf" }]
+        }
+      ]
+    }
+  ],
+
+  // Legacy flat structure for backward compatibility
   projects: [
     {
       projectName: "IoT Based Environmental Data logger(ESP32)",
       projectDesc: "Designed and implemented a realtime environmental monitoring system using ESP32 and multiple sensors, enabling cloud based data logging and remote access through Google Sheets.",
       footerLink: [
         {
-          name: "View PDF",
+          name: "View Report",
           url: "/projects/IOT_bASED_DATA_LOGGER.pdf"
         }
       ]
@@ -303,7 +397,7 @@ const bigProjects = {
       projectDesc: "Performed a techno economic feasibility analysis of solar PV and wind energy systems using NREL s System Advisor Model(SAM), integrating weather, location, and energy yield data to evaluate system performance and local renewable energy viability..",
       footerLink: [
         {
-          name: "View PDF",
+          name: "View Report",
           url: "/projects/Renewable_Energy_System_Project.pdf"
         }
       ]
@@ -319,12 +413,32 @@ const bigProjects = {
       ]
     },
     {
+      projectName: "Albab ExamAI – Real-time AI-powered Exam Management System",
+      projectDesc: " Developed an AI-powered Exam Management System using FastAPI, Groq Llama 3, and Docker for automated grading of MCQs and subjective answers.Implemented real-time feedback, anti-cheat security, and crash-resilient exam sessions.Deployed a scalable production-ready platform with background evaluation queues and CI/CD pipelines.",
+      footerLink: [
+        {
+          name: "GitHub",
+          url: "https://github.com/rashedulalbab253/GenAI-Assessment-Engine"
+        }
+      ]
+    },
+    {
       projectName: "MathRAG AI – Reliable Multimodal Math Problem Solver",
       projectDesc: " Built a end-to-end AI Math Mentor that can solve  math problems using multimodal inputs (image, audio, text), explain solutions step-by-step, and improve over time using memory and human feedback.",
       footerLink: [
         {
           name: "GitHub",
           url: "https://github.com/rashedulalbab253/AI_math_solver_system_"
+        }
+      ]
+    },
+    {
+      projectName: "BengalVision ALPR: AI-Powered Bangla Number Plate Detection and Recognition System",
+      projectDesc: " Engineered an AI-powered ALPR system, BengalPlateAI, for real-time detection and recognition of Bangladeshi vehicle number plates using YOLOv11. Built FastAPI dashboards featuring confidence tuning and session tracking, with Docker-based deployment for production readiness. Optimized inference across PyTorch, ONNX, and OpenVINO, achieving approximately 92% accuracy in complex urban environments.",
+      footerLink: [
+        {
+          name: "GitHub",
+          url: "https://github.com/rashedulalbab253/Tennis_analysis_system_using_YoloV12"
         }
       ]
     },
@@ -345,6 +459,16 @@ const bigProjects = {
         {
           name: "GitHub",
           url: "https://github.com/rashedulalbab253/Ai_Research_Assitant"
+        }
+      ]
+    },
+    {
+      projectName: "DermatoScan AI ",
+      projectDesc: " DermatoScan AI is an end-to-end skin lesion classification system using EfficientNet-B3 (PyTorch) for multi-class diagnosis.Built with FastAPI, Docker, and CI/CD, it delivers secure, production-ready medical AI deployment",
+      footerLink: [
+        {
+          name: "GitHub",
+          url: "https://github.com/rashedulalbab253/DermatoScan-End-to-End-AI"
         }
       ]
     }
@@ -415,8 +539,8 @@ const achievementSection = {
 // Research Section
 
 const researchSection = {
-  title: "Research",
-  subtitle: "Research interests",
+  title: "Research Contributions",
+  subtitle: "Specialized research interests",
   interests: [
     "AI in Healthcare",
     "Computer Vision",
@@ -766,7 +890,7 @@ const resumeSection = {
 };
 
 const contactInfo = {
-  title: emoji("Contact Me ☎️"),
+  title: "Contact Me",
   subtitle:
     "Have a question or want to collaborate on a research or project? Feel free to reach out!",
   number: "+8801834616407",

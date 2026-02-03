@@ -1,149 +1,114 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import "./Research.scss";
 import { researchSection } from "../../portfolio";
 import { Fade } from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
-import { useHistory } from "react-router-dom";
 
 export default function Research() {
-    const history = useHistory();
+    const { isDark } = useContext(StyleContext);
+    const [expandedProject, setExpandedProject] = useState(null);
+
+    const toggleAbstract = (id) => {
+        setExpandedProject(expandedProject === id ? null : id);
+    };
+
     function openUrlInNewTab(url) {
-        if (!url) {
-            return;
-        }
-        var win = window.open(url, "_blank");
-        win.focus();
+        if (!url) return;
+        window.open(url, "_blank").focus();
     }
 
-    const { isDark } = useContext(StyleContext);
     if (!researchSection.display) {
         return null;
     }
+
     return (
-        <Fade bottom duration={1000} distance="20px">
-            <div className="main" id="research">
-                <div className="research-main-div">
+        <div className="research-main" id="research">
+            <div className="research-main-div">
+                <Fade bottom duration={1000} distance="20px">
                     <div className="research-header">
-                        <h1 className="research-heading">{researchSection.title}</h1>
-                        <p
-                            className={
-                                isDark
-                                    ? "dark-mode research-subtitle"
-                                    : "subTitle research-subtitle"
-                            }
-                        >
+                        <h1 className={isDark ? "dark-mode research-heading" : "research-heading"}>
+                            {researchSection.title}
+                        </h1>
+                        <p className={isDark ? "dark-mode research-subtitle" : "research-subtitle"}>
                             {researchSection.subtitle}
                         </p>
                         <div className="interests-div">
-                            {researchSection.interests.map((interest, i) => {
-                                return (
-                                    <span
-                                        key={i}
-                                        className={
-                                            isDark
-                                                ? "dark-mode interest-span"
-                                                : "interest-span"
-                                        }
-                                    >
-                                        {interest}
-                                    </span>
-                                );
-                            })}
+                            {researchSection.interests.map((interest, i) => (
+                                <span key={i} className={isDark ? "dark-mode interest-span" : "interest-span"}>
+                                    {interest}
+                                </span>
+                            ))}
                         </div>
                     </div>
-                    <div className="research-cards-div-container">
-                        {researchSection.sections.map((section, index) => (
-                            <div key={index} className="research-section">
-                                <h2 className={isDark ? "dark-mode research-section-title" : "research-section-title"}>
-                                    {section.title}
-                                </h2>
-                                <div className="research-cards-div">
-                                    {section.projects.map((project, i) => {
-                                        return (
-                                            <div
-                                                key={i}
-                                                className={
-                                                    isDark
-                                                        ? `dark-mode research-card research-card-dark ${project.isThesis ? "thesis-card" : ""}`
-                                                        : `research-card research-card-light ${project.isThesis ? "thesis-card" : ""}`
-                                                }
-                                                onClick={() => history.push(`/research-details/${section.title.toLowerCase().replace(/\s/g, '-')}-${i}`)}
-                                            >
-                                                <div className="research-detail">
-                                                    {project.isThesis && (
-                                                        <div className="thesis-badge">THESIS</div>
-                                                    )}
-                                                    <h5
-                                                        className={isDark ? "dark-mode card-title" : "card-title"}
-                                                    >
-                                                        {project.projectName}
-                                                    </h5>
-                                                    {!project.isThesis && project.publishedAt && (
-                                                        <p
-                                                            className={
-                                                                isDark ? "dark-mode card-published" : "card-published"
-                                                            }
-                                                        >
-                                                            {project.publishedAt}
-                                                        </p>
-                                                    )}
-                                                    <span
-                                                        className={
-                                                            isDark ? "dark-mode card-instruction" : "card-instruction"
-                                                        }
-                                                    >
-                                                        Click on the title to see abstract
-                                                    </span>
-                                                    {project.footerLink ? (
-                                                        <div className="research-card-footer">
-                                                            {project.footerLink.map((link, i) => {
-                                                                return (
-                                                                    <span
-                                                                        key={i}
-                                                                        className={
-                                                                            isDark
-                                                                                ? "dark-mode research-tag"
-                                                                                : "research-tag"
-                                                                        }
-                                                                        onClick={(e) => {
-                                                                            e.stopPropagation();
-                                                                            openUrlInNewTab(link.url);
-                                                                        }}
-                                                                    >
-                                                                        {link.name.toLowerCase().includes("github") && (
-                                                                            <i
-                                                                                className="fab fa-github"
-                                                                                style={{ marginRight: "8px" }}
-                                                                            ></i>
-                                                                        )}
-                                                                        {link.name.toLowerCase().includes("pdf") && (
-                                                                            <i
-                                                                                className="fas fa-file-pdf"
-                                                                                style={{ marginRight: "8px" }}
-                                                                            ></i>
-                                                                        )}
-                                                                        {link.name.toLowerCase().includes("view") && (
-                                                                            <i
-                                                                                className="fas fa-external-link-alt"
-                                                                                style={{ marginRight: "8px" }}
-                                                                            ></i>
-                                                                        )}
-                                                                        {link.name}
-                                                                    </span>
-                                                                );
-                                                            })}
+                </Fade>
+
+                <div className="research-publications-list">
+                    {researchSection.sections.map((section, sidx) => (
+                        <div key={sidx} className="research-category-group">
+                            <h2 className={isDark ? "dark-mode category-title" : "category-title"}>
+                                {section.title}
+                            </h2>
+                            <div className="publication-items">
+                                {section.projects.map((project, pidx) => {
+                                    const projectId = `${sidx}-${pidx}`;
+                                    const isExpanded = expandedProject === projectId;
+
+                                    return (
+                                        <Fade bottom duration={1000} distance="20px" key={pidx}>
+                                            <div className={isDark ? "dark-mode publication-row" : "publication-row"}>
+                                                <div className="pub-content">
+                                                    <div className="pub-header">
+                                                        {project.isThesis && <span className="thesis-label">THESIS</span>}
+                                                        <h3 className="pub-title" onClick={() => project.footerLink && openUrlInNewTab(project.footerLink[0]?.url)}>
+                                                            {project.projectName}
+                                                        </h3>
+                                                        <div className="pub-venue-row">
+                                                            {project.publishedAt && (
+                                                                <span className="venue-badge">{project.publishedAt}</span>
+                                                            )}
                                                         </div>
-                                                    ) : null}
+                                                    </div>
+
+                                                    <div className="pub-actions">
+                                                        <button
+                                                            className={`action-btn ${isExpanded ? 'active' : ''}`}
+                                                            onClick={() => toggleAbstract(projectId)}
+                                                        >
+                                                            <i className={`fas ${isExpanded ? 'fa-chevron-up' : 'fa-align-left'}`}></i>
+                                                            {isExpanded ? "Hide Abstract" : "Abstract"}
+                                                        </button>
+
+                                                        {project.footerLink?.map((link, lid) => (
+                                                            <button
+                                                                key={lid}
+                                                                className="action-btn link-btn"
+                                                                onClick={() => openUrlInNewTab(link.url)}
+                                                            >
+                                                                <i className={
+                                                                    link.name.toLowerCase().includes("pdf") ? "fas fa-file-pdf" :
+                                                                        link.name.toLowerCase().includes("view") ? "fas fa-external-link-alt" :
+                                                                            link.name.toLowerCase().includes("github") ? "fab fa-github" : "fas fa-link"
+                                                                }></i>
+                                                                {link.name}
+                                                            </button>
+                                                        ))}
+                                                    </div>
+
+                                                    {isExpanded && (
+                                                        <div className="abstract-container">
+                                                            <p className="abstract-text">{project.projectDesc}</p>
+                                                        </div>
+                                                    )}
                                                 </div>
                                             </div>
-                                        );
-                                    })}
-                                </div>
+                                        </Fade>
+                                    );
+                                })}
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
             </div>
-        </Fade>
+        </div>
     );
 }

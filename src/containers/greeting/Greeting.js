@@ -22,9 +22,8 @@ export default function Greeting() {
               <h1
                 className={isDark ? "dark-mode greeting-text" : "greeting-text"}
               >
-                {" "}
-                {greeting.title}{" "}
-                <span className="wave-emoji">{emoji("👋")}</span>
+                Hi all, I'm{" "}
+                <span className="name-gradient">Rashed</span>
               </h1>
               <p
                 className={
@@ -33,7 +32,8 @@ export default function Greeting() {
                     : "greeting-text-p subTitle"
                 }
               >
-                {greeting.subTitle}
+                <span className="highlight">AI Researcher & PhD Candidate</span> with an EEE foundation, specializing in the synergy between <span className="highlight">Physics-Informed AI</span> and <span className="highlight">Modern Multimodal Systems</span>.
+                My research bridges <span className="highlight">Computer Vision</span>, <span className="highlight">NLP</span>, and <span className="highlight">Behavioral AI</span> to revolutionize <span className="highlight-alt">Healthcare</span>, <span className="highlight-alt">Renewable Energy</span>, and <span className="highlight-alt">AI-Driven Electromagnetic Systems</span>—transforming high-impact theory into <span className="highlight-alt">resilient, real-world engineering solutions</span>.
               </p>
 
               <div className="button-greeting-div">

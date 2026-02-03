@@ -1,10 +1,13 @@
 @import "../../_globalColor";
 
+#skills {
+  background: #000000; // Consistent black background from image
+}
+
 .skills-main-div {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 20px;
 }
 
 .skills-header {
@@ -13,218 +16,146 @@
 }
 
 .skills-heading {
-  font-size: 56px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  background: linear-gradient(135deg, $main-color 0%, #ff8c42 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1.5;
-  padding-bottom: 0.2em;
-  padding-top: 0.1em;
-  overflow: visible;
+  font-family: "Outfit", sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  color: $main-color !important; // Brilliant orange from image
+  margin-bottom: 25px;
+  letter-spacing: -1px;
 }
 
 .skills-text-subtitle {
+  font-family: "Inter", sans-serif;
   font-size: 20px;
-  max-width: 800px;
-  margin: 0 auto 40px;
+  color: #ffffff;
+  max-width: 900px;
+  margin: 0 auto;
   line-height: 1.6;
+  opacity: 0.9;
 }
 
-.software-skills-main-div {
+.software-skills-row {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
-}
-
-.skills-categories-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
-  max-width: 1400px;
-  margin: 0 auto;
+  margin-bottom: 80px;
   width: 100%;
 }
 
-.skill-category-card {
-  background: white;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, $main-color 0%, #ff8c42 100%);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-  }
-
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(255, 106, 0, 0.15);
-
-    &::before {
-      transform: scaleX(1);
-    }
-
-    .skill-category-icon {
-      transform: scale(1.1) rotate(5deg);
-      color: $main-color;
-    }
-  }
+.skills-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
-.dark-mode.skill-category-card {
-  background: rgba(30, 30, 30, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 106, 0, 0.2);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+.skill-category-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 35px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
-    box-shadow: 0 20px 40px rgba(255, 106, 0, 0.25);
-    border-color: rgba(255, 106, 0, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba($main-color, 0.5);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(255, 106, 0, 0.1);
+
+    .skill-category-icon {
+      color: $main-color;
+    }
+
+    .category-divider {
+      background: $main-color;
+      width: 100%;
+    }
   }
 }
 
 .skill-category-header {
+  margin-bottom: 30px;
+}
+
+.skill-category-title-div {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-bottom: 20px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
-}
-
-.dark-mode .skill-category-header {
-  border-bottom-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 15px;
 }
 
 .skill-category-icon {
   font-size: 28px;
-  color: #555;
-  transition: all 0.3s ease;
-}
-
-.dark-mode .skill-category-icon {
-  color: #fff;
+  color: #ffffff;
+  transition: color 0.3s ease;
 }
 
 .skill-category-title {
-  font-size: 22px;
-  font-weight: 600;
+  font-family: "Outfit", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
   margin: 0;
-  color: #1a1a1a;
 }
 
-.dark-mode .skill-category-title {
-  color: #fff;
+.category-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
 }
 
 .skill-items {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .skill-tag {
-  background: linear-gradient(135deg, rgba(255, 106, 0, 0.1) 0%, rgba(255, 140, 66, 0.1) 100%);
-  color: $main-color;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 500;
-  border: 1.5px solid rgba(255, 106, 0, 0.2);
-  transition: all 0.2s ease;
+  background: transparent;
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-family: "Inter", sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  border: 1.5px solid rgba(255, 106, 0, 0.4); // Specific orange border from image
+  transition: all 0.3s ease;
   cursor: default;
 
   &:hover {
-    background: $main-color;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 106, 0, 0.3);
+    background: rgba($main-color, 0.1);
+    border-color: $main-color;
+    transform: scale(1.05);
   }
 }
 
-.dark-mode.skill-tag {
-  background: rgba(255, 106, 0, 0.15);
-  color: #ffa366;
-  border-color: rgba(255, 106, 0, 0.3);
-
-  &:hover {
-    background: $main-color;
-    color: #000;
+/* Responsive */
+@media (max-width: 1200px) {
+  .skills-categories-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-}
 
-.subTitle {
-  color: $subTitle;
-}
-
-/* Media Queries */
-@media (max-width: 1380px) {
   .skills-heading {
     font-size: 48px;
-  }
-
-  .skills-categories-container {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
+  .skills-categories-grid {
+    grid-template-columns: 1fr;
+  }
+
   .skills-heading {
-    font-size: 36px;
+    font-size: 38px;
   }
 
   .skills-text-subtitle {
-    font-size: 16px;
-  }
-
-  .skills-categories-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    font-size: 17px;
   }
 
   .skill-category-card {
-    padding: 20px;
-  }
-
-  .skill-category-title {
-    font-size: 18px;
-  }
-
-  .skill-category-icon {
-    font-size: 24px;
-  }
-
-  .skill-tag {
-    font-size: 13px;
-    padding: 6px 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .skills-main-div {
-    padding: 20px 10px;
-  }
-
-  .skills-heading {
-    font-size: 28px;
-  }
-
-  .skills-text-subtitle {
-    font-size: 14px;
+    padding: 30px;
   }
 }

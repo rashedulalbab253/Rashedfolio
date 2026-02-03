@@ -11,7 +11,7 @@ export default function Skills() {
     return null;
   }
 
-  // Define skill categories with icons
+  // Skills from reference image
   const skillCategories = [
     {
       title: "Programming",
@@ -35,8 +35,7 @@ export default function Skills() {
         "Supervised & Unsupervised Learning",
         "Deep Learning (Neural Networks, Transformers)",
         "NLP, LLM, Multimodal LLM",
-        "RAG, Generative Models (GAN)",
-        "Reinforcement Learning"
+        "RAG, Generative Models (GAN)"
       ]
     },
     {
@@ -58,37 +57,33 @@ export default function Skills() {
   ];
 
   return (
-    <div className={isDark ? "dark-mode main" : "main"} id="skills">
+    <div id="skills">
       <div className="skills-main-div">
-        <Fade bottom duration={1000} distance="20px">
+        <Fade bottom duration={1000}>
           <div className="skills-header">
-            <h1
-              className={isDark ? "dark-mode skills-heading" : "skills-heading"}
-            >
-              {skillsSection.title}
-            </h1>
-            <p
-              className={
-                isDark
-                  ? "dark-mode subTitle skills-text-subtitle"
-                  : "subTitle skills-text-subtitle"
-              }
-            >
-              {skillsSection.subTitle}
+            <h1 className="skills-heading">Technical Skills</h1>
+            <p className={isDark ? "dark-mode skills-text-subtitle" : "skills-text-subtitle"}>
+              A comprehensive skill set spanning AI/ML, Computer Vision, Software Development, and Hardware Engineering.
             </p>
-            <div className="software-skills-main-div">
-              <SoftwareSkill />
-            </div>
           </div>
         </Fade>
 
-        <div className="skills-categories-container">
+        <Fade bottom duration={1200}>
+          <div className="software-skills-row">
+            <SoftwareSkill />
+          </div>
+        </Fade>
+
+        <div className="skills-categories-grid">
           {skillCategories.map((category, index) => (
             <Fade bottom duration={1000} distance="20px" delay={index * 100} key={index}>
               <div className={isDark ? "dark-mode skill-category-card" : "skill-category-card"}>
                 <div className="skill-category-header">
-                  <i className={`${category.icon} skill-category-icon`}></i>
-                  <h3 className="skill-category-title">{category.title}</h3>
+                  <div className="skill-category-title-div">
+                    <i className={`${category.icon} skill-category-icon`}></i>
+                    <h3 className="skill-category-title">{category.title}</h3>
+                  </div>
+                  <div className="category-divider"></div>
                 </div>
                 <div className="skill-items">
                   {category.skills.map((skill, i) => (

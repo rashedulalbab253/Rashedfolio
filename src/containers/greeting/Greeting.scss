@@ -69,12 +69,53 @@
 }
 
 .greeting-text {
-  font-size: 70px;
+  font-family: "Outfit", sans-serif;
+  font-size: 80px;
+  font-weight: 700;
   line-height: 1.1;
-  color: $textColor !important;
-  text-align: center;
-  margin-bottom: 10px;
-  /* Added spacing */
+  color: #1a1a1a !important;
+  text-align: left;
+  margin-bottom: 25px;
+  letter-spacing: -2px;
+
+  .name-gradient {
+    background: linear-gradient(135deg, $main-color 0%, #ff8c00 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.dark-mode.greeting-text {
+  color: white !important;
+
+  .name-gradient {
+    background: linear-gradient(135deg, $main-color 0%, #ff9d00 50%, #ffffff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Remove filter from here as it can break background-clip: text in some browsers */
+  }
+}
+
+.greeting-text-div {
+  z-index: 5;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba($main-color, 0.1) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+  }
 }
 
 .dark-mode.greeting-text {
@@ -82,18 +123,51 @@
 }
 
 .greeting-text-p {
-  font-size: 30px;
-  line-height: normal;
-  /* Tighten line height */
-  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
   white-space: pre-wrap;
-  color: $subTitle !important;
-  margin-top: 5px;
-  /* Minimal top margin */
+  color: #333333 !important; // Darker and cleaner
+  margin-top: 10px;
+  max-width: 800px;
+
+  .highlight {
+    color: #000000;
+    font-weight: 700; // Bolder for high-impact
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: rgba($main-color, 0.12);
+      z-index: -1;
+      border-radius: 2px;
+    }
+  }
+
+  .highlight-alt {
+    color: $main-color;
+    font-weight: 700;
+  }
 }
 
 .dark-mode.greeting-text-p {
-  color: $text-secondary-dark !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+
+  .highlight {
+    color: #ffffff;
+
+    &::after {
+      background: rgba($main-color, 0.25);
+    }
+  }
 }
 
 .greeting-image-div {
